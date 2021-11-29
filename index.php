@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>TODOリスト</title>
+        <title>ToDoリスト</title>
     </head>
     <body>
         <div>
-            <h1>ToDoリスト</h1>
+            <h1>ToDo</h1>
             <table>
                 <tr>
                     <td>タイトル</td>
@@ -26,3 +26,4 @@
             </table>
         </div>
     </body>
+
