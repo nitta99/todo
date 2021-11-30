@@ -6,7 +6,7 @@
     </head>
     <body>
         <div>
-            <h1>ToDoリスト</h1>
+            <h1>ToDo</h1>
             <table>
                 <tr>
                     <td>タイトル</td>
