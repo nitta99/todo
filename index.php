@@ -25,14 +25,6 @@ $taskManager->expiredList();
                         <td>タイトル</td>
                         <td>期限</td>
                     </tr>
-                    <tr>
-                        <td>
-                        <?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?>
-                        </td>
-                        <td>
-                        <?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?>
-                        </td>
-                    </tr>
                 </table>
                 <table>
                     <tr>
