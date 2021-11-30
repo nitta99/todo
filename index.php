@@ -28,6 +28,7 @@ $taskManager->expiredList();
                             <td>期限出力スペース</td>
                         </tr>
                 </table>
+                <hr>
                 <table>
                     <tr>
                         <td>タイトル</td>
