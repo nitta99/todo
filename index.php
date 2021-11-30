@@ -1,14 +1,4 @@
 <?php
-$NAME = $_POST['name'];
-$DEADLINE = $_POST['deadline'];
-$FIX_FLG = $_POST['fix_flg'];
-
-require "connect.php";
-$obj = new connect();
-$sql = "SELECT * FROM public.todo";
-$test = 1;
-$items=$obj->select($sql);
-
 require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
 $task->registTask();
@@ -17,7 +7,6 @@ require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 $taskManager->expiredList();
 ?>
-
 
 <!doctype html>
 <html>
@@ -34,12 +23,10 @@ $taskManager->expiredList();
                         <td>タイトル</td>
                         <td>期限</td>
                     </tr>
-                    <tr>
-                    <?php foreach($items as $item) : ?>
-                        <td><?php echo $item['name']; ?></td>
-                        <td><?php echo $item['deadline']; ?></td>
-                    <?php endforeach; ?>
-                    </tr>
+                        <tr>
+                            <td>タイトル出力スペース</td>
+                            <td>期限出力スペース</td>
+                        </tr>
                 </table>
                 <table>
                     <tr>
