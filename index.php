@@ -5,9 +5,9 @@ $FIX_FLG = $_POST['fix_flg'];
 
 require "connect.php";
 $obj = new connect();
-$sql = "INSERT INTO public.todo VALUES ('$NAME','$DEADLINE','$FIX_FLG');";
+$sql = "SELECT * FROM public.todo";
 $test = 1;
-$items=$obj->plural($sql,$test);
+$items=$obj->select($sql);
 
 require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
