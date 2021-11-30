@@ -26,14 +26,6 @@
                         <td>タイトル</td>
                         <td>期限</td>
                     </tr>
-                    <tr>
-                        <td>
-                            
-                        </td>
-                        <td>
-
-                        </td>
-                    </tr>
                 </table>
                 <table>
                     <tr>
