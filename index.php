@@ -10,6 +10,16 @@
     $sql = "INSERT INTO public.todo VALUES ('$NAME', '$DEADLINE', '$FIX_FLG');";
     $pdo->exec ($sql);
 ?> -->
+<?php
+require "task.php";
+$task = new TaskClass($name,$deadline,$fix_flg);
+$task->registTask();
+
+require "taskMgt.php";
+$taskManager = new TaskMgtClass();
+$taskManager->expiredList();
+?>
+
 
 <!doctype html>
 <html>
