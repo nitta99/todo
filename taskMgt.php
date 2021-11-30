@@ -1,20 +1,25 @@
 <?php
 class TaskMgtClass{
+    //タスク一覧
     public $tasklist;
 
-    public function incompleteList(){
+    //未完了タスク一覧を取得するメソッド
+    public function getIncompleteList(){
 
     }
 
-    public function completeList(){
+    //完了タスク一覧を取得するメソッド
+    public function getCompleteList(){
 
     }
 
-    public function expiredList(){
+    //期限切れタスク一覧を取得するメソッド
+    public function getExpiredList(){
 
     }
 
-    public function allList(){
+    //全てのタスク一覧を取得するメソッド
+    public function getAllList(){
 
     }
 }

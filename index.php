@@ -1,11 +1,13 @@
 <?php
 require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
+//登録
 $task->registTask();
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
-$taskManager->expiredList();
+//未完了タスクを取得
+$taskManager->getExpiredList();
 ?>
 
 <!doctype html>
@@ -26,6 +28,9 @@ $taskManager->expiredList();
                         <tr>
                             <td>タイトル出力スペース</td>
                             <td>期限出力スペース</td>
+                            <td>
+                                <input type="button" value="完了">
+                            </td>
                         </tr>
                 </table>
                 <hr>
