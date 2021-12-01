@@ -32,10 +32,11 @@ class TaskClass{
     //タスクを登録するメソッド
     public function registTask(){
         require "connect.php";
-        $sql = "INSERT INTO public.todo VALUES ('$this->name', '$this->deadline');";
+        $sql = "INSERT INTO public.todo VALUES ('$this->name', '$this->deadline','$this->fix_flg');";
         $pdo->exec ($sql);
         return $this->name;
         return $this->deadline;
+        return $this->fix_flg;
     }
 
     //タスクを更新するメソッド
