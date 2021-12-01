@@ -30,7 +30,7 @@ $taskManager->getExpiredList();
                         <tr>
                             <td>タイトル出力スペース</td>
                             <?php foreach ($regists as $regist): ?>
-                                <td><?php echo $regist[1]; ?></td>
+                                <td><?php echo $regist['name']; ?></td>
                             <?php endforeach; ?>
                             <td>期限出力スペース</td>
                             <?php foreach ($regists as $regist): ?>
