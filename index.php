@@ -2,10 +2,11 @@
 require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
 //登録
-$regist = $task->registTask();
+$task->registTask();
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
+$lists = $taskManager->getAllList();
 //未完了タスクを取得
 $taskManager->getExpiredList();
 ?>
@@ -27,7 +28,13 @@ $taskManager->getExpiredList();
                     </tr>
                         <tr>
                             <td>タイトル出力スペース</td>
+                            <?php foreach ($lists as $list): ?>
+                                <td><?php echo $list[1]?></td>
+                            <?php endforeach; ?>
                             <td>期限出力スペース</td>
+                            <?php foreach ($lists as $list): ?>
+                                <td><?php echo $list[2]?></td>
+                            <?php endforeach; ?>
                             <td>
                                 <input type="button" value="完了">
                             </td>
