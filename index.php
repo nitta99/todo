@@ -33,8 +33,7 @@ $taskManager->getExpiredList();
                                 <td><?php echo htmlspecialchars(@$regist[1], ENT_QUOTES, 'UTF-8'); ?></td>
                             <?php endforeach; ?>
                             <?php foreach ($lists as $list): ?>
-                                <td><?php echo $list[1]?></td>
-                                <td><?php echo $list[2]?></td>
+                                <td><?php echo htmlspecialchars(@$list["name"], ENT_QUOTES, 'UTF-8'); ?></td>
                             <?php endforeach; ?>
                             <td>期限出力スペース</td>
                             <?php foreach ($regists as $regist): ?>
