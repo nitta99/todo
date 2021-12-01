@@ -28,10 +28,12 @@ $taskManager->getExpiredList();
                         <td>期限</td>
                     </tr>
                         <tr>
-                            <?php foreach ($lists as $regist): ?>
+                            <td>タイトル出力スペース</td>
+                            <?php foreach ($regists as $regist): ?>
                                 <td><?php echo htmlspecialchars(@$regist[1], ENT_QUOTES, 'UTF-8'); ?></td>
                             <?php endforeach; ?>
-                            <?php foreach ($lists as $regist): ?>
+                            <td>期限出力スペース</td>
+                            <?php foreach ($regists as $regist): ?>
                                 <td><?php echo htmlspecialchars(@$regist[2], ENT_QUOTES, 'UTF-8'); ?></td>
                             <?php endforeach; ?>
                             <td>
