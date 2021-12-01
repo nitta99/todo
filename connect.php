@@ -13,7 +13,7 @@ class connect {
         $user=self::USER;
         $pass=self::PASS;
         try{
-            $pdo=new PDO($dsn,$user,$pass,array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES '.SELF::UTF));
+            $pdo=new PDO($dsn,$user,$pass);
         }catch(Exception $e){
             echo 'error' .$e->getMesseage;
             die();
