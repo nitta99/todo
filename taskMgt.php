@@ -21,7 +21,6 @@ class TaskMgtClass{
     //全てのタスク一覧を取得するメソッド
     public function getAllList(){
         require "connect.php";
-        $pdo = openDb();
         $sql = "SELECT * FROM public.todo WHERE 1 = 1";
         $list = $pdo->query($sql);
         return $this->tasklist;
