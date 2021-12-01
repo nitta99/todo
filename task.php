@@ -1,22 +1,22 @@
 <?php
 class TaskClass{
     //ID
-    public $id;
+    private $id;
 
     //タイトルネーム
-    public $name;
+    private $name;
 
     //期限
-    public $deadline;
+    private $deadline;
 
     //完了フラグ
-    public $fix_flg;
+    private $fix_flg;
 
-    function __construct(){
+    function __construct($name,$deadline,$fix_flg){
         $this->id = null;
-        $this->name;
-        $this->deadline;
-        $this->fix_flg;
+        $this->name = $name;
+        $this->deadline = $deadline;
+        $this->fix_flg = $fix_flg;
     }
 
     //タスクが完了済みか確認するメソッド
@@ -31,7 +31,7 @@ class TaskClass{
 
     //タスクを登録するメソッド
     public function registTask(){
-
+        
     }
 
     //タスクを更新するメソッド

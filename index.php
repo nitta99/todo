@@ -1,4 +1,14 @@
 <?php
+//クラスファイルの読み込み
+require "connect.php";
+//クラスの生成
+$obj=new connect();
+$sql="SELECT * FROM public.todo";
+//変数の設定
+$test=1;
+//クラスの中の関数の呼び出し
+$items=$obj->select($sql);
+
 require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
 //登録
@@ -27,7 +37,17 @@ $taskManager->getExpiredList();
                     </tr>
                         <tr>
                             <td>タイトル出力スペース</td>
+                            <td>
+                            <?php foreach($items as $item) : ?>
+                            <p><?php echo $item['name']; ?></p>
+                            <?php endforeach; ?>
+                            </td>
                             <td>期限出力スペース</td>
+                            <td>
+                            <?php foreach($items as $item) : ?>
+                            <p><?php echo $item['deadline']; ?></p>
+                            <?php endforeach; ?>
+                            </td>
                             <td>
                                 <input type="button" value="完了">
                             </td>
