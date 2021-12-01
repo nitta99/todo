@@ -3,11 +3,8 @@
 require "connect.php";
 //クラスの生成
 $obj=new connect();
-$sql="SELECT * FROM public.todo";
-//変数の設定
-$test=1;
-//クラスの中の関数の呼び出し
-$items=$obj->select($sql);
+$sql = 'select * from public.todo';
+
 
 require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
@@ -38,16 +35,11 @@ $taskManager->getExpiredList();
                         <tr>
                             <td>タイトル出力スペース</td>
                             <td>
-                            <?php foreach($items as $item) : ?>
-                            <p><?php echo $item['name']; ?></p>
+                            <?php foreach($pdo->query($sql) as $row) : ?>
+                                <td><?php echo $row['name']; ?></td>
                             <?php endforeach; ?>
                             </td>
                             <td>期限出力スペース</td>
-                            <td>
-                            <?php foreach($items as $item) : ?>
-                            <p><?php echo $item['deadline']; ?></p>
-                            <?php endforeach; ?>
-                            </td>
                             <td>
                                 <input type="button" value="完了">
                             </td>
