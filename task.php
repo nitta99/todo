@@ -31,7 +31,7 @@ class TaskClass{
 
     //タスクを登録するメソッド
     public function registTask(){
-        
+
     }
 
     //タスクを更新するメソッド

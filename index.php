@@ -17,7 +17,7 @@ $taskManager->getExpiredList();
         <title>ToDoリスト</title>
     </head>
     <body>
-        <form action="index.php" method="post">
+        <form action="index.php" method="post" name='todo'>
             <div>
                 <h1>ToDoリスト</h1>
                 <table>
@@ -41,13 +41,13 @@ $taskManager->getExpiredList();
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" />
+                            <input type="text" name="name" value="">
                         </td>
                         <td>
-                            <input type="date" />
+                            <input type="date" name="deadline">
                         </td>
                         <td>
-                            <input type="submit" value="登録" />
+                            <input type="submit" value="登録">
                         </td>
                     </tr>
                 </table>
