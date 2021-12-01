@@ -29,13 +29,13 @@ $taskManager->getExpiredList();
                             <td>タイトル出力スペース</td>
                             <td>
                             <?php foreach($regist as $row) : ?>
-                                <td><?php echo $row[1]; ?></td>
+                                <td><?php echo $row['name']; ?></td>
                             <?php endforeach; ?>
                             </td>
                             <td>期限出力スペース</td>
                             <td>
                             <?php foreach($regist as $row) : ?>
-                                <td><?php echo $row[2]; ?></td>
+                                <td><?php echo $row['deadline']; ?></td>
                             <?php endforeach; ?>
                             </td>
                             <td>
