@@ -35,6 +35,7 @@ class TaskClass{
         $sql = "INSERT INTO public.todo VALUES ('$NAME', '$DEADLINE', '$FIX_FLG');";
         $pdo->exec ($sql);
         return $this->name;
+        return $this->deadline;
     }
 
     //タスクを更新するメソッド
