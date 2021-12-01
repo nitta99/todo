@@ -1,16 +1,16 @@
 <?php
 class TaskClass{
     //ID
-    protected $id;
+    public $id;
 
     //タイトルネーム
-    protected $name;
+    public $name;
 
     //期限
-    protected $deadline;
+    public $deadline;
 
     //完了フラグ
-    protected $fix_flg;
+    public $fix_flg;
 
     function __construct(){
         $this->id = null;
