@@ -19,7 +19,7 @@ $taskManager->getExpiredList();
         <title>ToDoリスト</title>
     </head>
     <body>
-        <form action="index.php" method="post" name='todo'>
+        <form action="task.php" method="post" name='todo'>
             <div>
                 <h1>ToDoリスト</h1>
                 <table>
@@ -29,11 +29,11 @@ $taskManager->getExpiredList();
                     </tr>
                         <tr>
                             <td>タイトル出力スペース</td>
-                            <?php foreach ($regists as $regist): ?>
+                            <?php foreach ($lists as $regist): ?>
                                 <td><?php echo htmlspecialchars(@$regist[1], ENT_QUOTES, 'UTF-8'); ?></td>
                             <?php endforeach; ?>
                             <td>期限出力スペース</td>
-                            <?php foreach ($regists as $regist): ?>
+                            <?php foreach ($lists as $regist): ?>
                                 <td><?php echo htmlspecialchars(@$regist[2], ENT_QUOTES, 'UTF-8'); ?></td>
                             <?php endforeach; ?>
                             <td>
