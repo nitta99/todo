@@ -22,7 +22,7 @@ class TaskMgtClass{
     public function getAllList(){
         require "connect.php";
         $sql = "SELECT * FROM public.todo WHERE 1 = 1";
-        $list = $pdo->query($sql);
+        $pdo->query($sql);
         return $this->tasklist;
     }
 }
