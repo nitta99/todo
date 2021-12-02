@@ -1,6 +1,6 @@
 <?php
 require "task.php";
-$task = new TaskClass($this->name,$this->deadline,false);
+$task = new TaskClass($name,$deadline,false);
 //登録
 $task->registTask();
 
@@ -27,9 +27,9 @@ $taskManager->getExpiredList();
                     </tr>
                         <tr>
                             <td>タイトル出力スペース</td>
-                                <td><?php echo htmlspecialchars(@$name, ENT_QUOTES, 'UTF-8'); ?></td>
+                                <td><?php echo htmlspecialchars(@$this->name, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>期限出力スペース</td>
-                                <td><?php echo htmlspecialchars(@$deadline, ENT_QUOTES, 'UTF-8'); ?></td>
+                                <td><?php echo htmlspecialchars(@$this->deadline, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
                                 <input type="button" value="完了">
                             </td>
