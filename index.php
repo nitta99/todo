@@ -17,7 +17,7 @@ $taskManager->getExpiredList();
         <title>ToDoリスト</title>
     </head>
     <body>
-        <form action="index.php" method="post" name='todo'>
+        <form action="task.php" method="post" name='todo'>
             <div>
                 <h1>ToDoリスト</h1>
                 <table>
