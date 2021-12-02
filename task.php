@@ -33,7 +33,7 @@ class TaskClass{
     public function registTask(){
         require "connect.php";
         $sql = "INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s', '%s', '%s');";
-        $res = sprintf('メール確認','2021/12/02',false);
+        $res = sprintf($this->name, $this->deadline, false);
         echo $res;
         $pdo->exec ($sql);
     }
