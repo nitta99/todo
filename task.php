@@ -33,9 +33,9 @@ class TaskClass{
     public function registTask(){
         require "connect.php";
         $sql = "INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s', '%s', '%s');";
-        $res = sprintf($this->name, $this->deadline, false);
+        $res = sprintf($sql,$this->name, $this->deadline, false);
         echo $sql;
-        $pdo->exec ($sql);
+        $pdo->exec ($res);
     }
 
     //タスクを更新するメソッド
