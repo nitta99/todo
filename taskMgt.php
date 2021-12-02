@@ -20,10 +20,7 @@ class TaskMgtClass{
 
     //全てのタスク一覧を取得するメソッド
     public function getAllList(){
-        require "connect.php";
-        $sql = "SELECT * FROM public.todo WHERE 1 = 1";
-        $pdo->query($sql);
-        return $this->tasklist;
+
     }
 }
 ?>

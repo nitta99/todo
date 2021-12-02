@@ -2,12 +2,10 @@
 require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
 //登録
-$regists = $task->registTask();
+$regists = $connect->registTask();
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
-//全てのタスク一覧を取得
-$lists = $taskManager->getAllList();
 //未完了タスクを取得
 $taskManager->getExpiredList();
 ?>
