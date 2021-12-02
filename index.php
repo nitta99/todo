@@ -27,13 +27,9 @@ $taskManager->getExpiredList();
                     </tr>
                         <tr>
                             <td>タイトル出力スペース</td>
-                            <?php foreach ($regists as $regist): ?>
-                                <td><?php echo htmlspecialchars(@$regist['name'], ENT_QUOTES, 'UTF-8'); ?></td>
-                            <?php endforeach; ?>
+                                <td><?php echo htmlspecialchars(@$regists['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>期限出力スペース</td>
-                            <?php foreach ($regists as $regist): ?>
-                                <td><?php echo htmlspecialchars(@$regist['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
-                            <?php endforeach; ?>
+                                <td><?php echo htmlspecialchars(@$regists['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
                                 <input type="button" value="完了">
                             </td>
