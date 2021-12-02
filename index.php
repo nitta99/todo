@@ -1,5 +1,5 @@
 <?php
-require "C:\\Users\\r.nitta\\todo\\task.php";
+require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
 //登録
 $task->registTask();

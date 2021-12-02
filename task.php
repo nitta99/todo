@@ -31,7 +31,7 @@ class TaskClass{
 
     //タスクを登録するメソッド
     public function registTask(){
-        require "C:\\Users\\r.nitta\\todo\\connect.php";
+        require "connect.php";
         $sql = "INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('$this->name', '$this->deadline', false);";
         $pdo->exec ($sql);
     }
