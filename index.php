@@ -2,7 +2,7 @@
 require "task.php";
 $task = new TaskClass($name,$deadline,$fix_flg);
 //登録
-$regists = $stmt->registTask();
+$task->registTask();
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();

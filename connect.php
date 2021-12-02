@@ -7,7 +7,7 @@
         echo 'error' .$e->getMesseage;
         die();
     }
-    //エラーを表示してくれる。
+      //エラーを表示してくれる。
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     return $pdo;
 ?>
