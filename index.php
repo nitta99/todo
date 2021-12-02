@@ -1,6 +1,6 @@
 <?php
 require "task.php";
-$task = new TaskClass($name,$deadline,$fix_flg);
+$task = new TaskClass($name,$deadline,false);
 //登録
 $task->registTask();
 
