@@ -35,9 +35,6 @@ class TaskClass{
         $sql = sprintf("INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s','%s',%s);", $this->name, $this->deadline, false);
         $pdo->exec ($sql);
         echo $sql;
-        echo $this->name;
-        echo $this->deadline;
-        echo $this->fix_flg;
     }
 
     //タスクを更新するメソッド
