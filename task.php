@@ -34,8 +34,6 @@ class TaskClass{
         require "connect.php";
         $sql = "INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('$this->name', '$this->deadline', false);";
         $pdo->exec ($sql);
-        header("Location: index.php");
-        exit();
     }
 
     //タスクを更新するメソッド
