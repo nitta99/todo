@@ -1,3 +1,15 @@
+<?php
+require "task.php";
+$task = new TaskClass($name,$deadline,false);
+if(isset($_POST['add'])){
+    //登録
+    $task->registTask();
+}
+require "taskMgt.php";
+$taskManager = new TaskMgtClass();
+//未完了タスクを取得
+$taskManager->getExpiredList();
+?>
 
 <!doctype html>
 <html>
@@ -46,16 +58,3 @@
         </form>
     </body>
 </html>
-
-<?php
-require "task.php";
-$task = new TaskClass($name,$deadline,false);
-if(isset($_POST['add'])){
-    //登録
-    $task->registTask();
-}
-require "taskMgt.php";
-$taskManager = new TaskMgtClass();
-//未完了タスクを取得
-$taskManager->getExpiredList();
-?>
