@@ -20,7 +20,16 @@ class TaskMgtClass{
 
     //全てのタスク一覧を取得するメソッド
     public function getAllList(){
-
+        require "connect.php";
+        try{
+            $sql = "SELECT * FROM public.enquete WHERE 1 = 1";
+            echo $sql;
+            $pdo->exec($sql);
+            return true;
+        }catch(PDOException $e){
+            echo "DB登録で例外が発生" . $e->getMessage();
+            return false;
+        }
     }
 }
 ?>
