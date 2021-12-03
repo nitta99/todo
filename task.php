@@ -12,11 +12,11 @@ class TaskClass{
     //完了フラグ
     private $fix_flg;
 
-    function __construct($name,$deadline){
+    function __construct($name,$deadline,$fix_flg){
         $this->id = null;
         $this->name = $name;
         $this->deadline = $deadline;
-        $this->fix_flg = false;
+        $this->fix_flg = $fix_flg;
     }
 
     //タスクが完了済みか確認するメソッド
@@ -33,7 +33,7 @@ class TaskClass{
     public function registTask(){
         require "connect.php";
         try{
-            $sql = sprintf("INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s', '%s', %s);", $this->name, $this->deadline, $this->fix_flg);
+            $sql = sprintf("INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s', '%s', %s);", $this->name, $this->deadline, false);
             echo $sql;
             $pdo->exec($sql);
             return true;
