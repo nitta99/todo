@@ -1,6 +1,6 @@
 <?php
 require "task.php";
-$task = new TaskClass('hoge',$deadline,false);
+$task = new TaskClass($name,$deadline,false);
 if(isset($_POST['add'])){
     //登録
     $result = $task->registTask();
