@@ -22,6 +22,7 @@ function regist(){
     if(getName){
         return true;
     }else {
+        alert("タスク内容を入力してください");
         return false;
     }
 }
