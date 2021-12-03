@@ -49,4 +49,11 @@ class TaskClass{
 
     }
 }
+$task = new TaskClass($name,$deadline,false);
+$result = $task->registTask();
+    if ($result) {
+        echo "登録成功";
+    } else {
+        echo "登録失敗";
+    }
 ?>
