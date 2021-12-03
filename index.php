@@ -1,14 +1,3 @@
-<?php
-require "task.php";
-$task = new TaskClass($name,$deadline,false);
-//登録
-$task->registTask();
-
-require "taskMgt.php";
-$taskManager = new TaskMgtClass();
-//未完了タスクを取得
-$taskManager->getExpiredList();
-?>
 
 <!doctype html>
 <html>
@@ -58,3 +47,14 @@ $taskManager->getExpiredList();
     </body>
 </html>
 
+<?php
+require "task.php";
+$task = new TaskClass($name,$deadline,false);
+//登録
+$task->registTask();
+
+require "taskMgt.php";
+$taskManager = new TaskMgtClass();
+//未完了タスクを取得
+$taskManager->getExpiredList();
+?>
