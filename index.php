@@ -16,6 +16,18 @@ $taskManager = new TaskMgtClass();
 $taskManager->getExpiredList();
 ?>
 
+<script type="text/javascript">
+function regist(){
+    getName = document.todo.name.value;
+    if(getName){
+        return true;
+    }else {
+        return false;
+    }
+}
+
+</script>
+
 <!doctype html>
 <html>
     <head>
@@ -23,7 +35,8 @@ $taskManager->getExpiredList();
         <title>ToDoリスト</title>
     </head>
     <body>
-        <form action="index.php" method="post" name='todo'>
+        <form action="index.php" method="post" name='todo'
+            onsubmit="return(regist())">
             <div>
                 <h1>ToDoリスト</h1>
                 <table>
@@ -52,7 +65,7 @@ $taskManager->getExpiredList();
                             <input type="text" name="name" value="">
                         </td>
                         <td>
-                            <input type="date" name="deadline">
+                            <input type="date" name="deadline" value="">
                         </td>
                         <td>
                             <input type="submit" name="add" value="登録">
