@@ -1,6 +1,6 @@
 <?php
 require "task.php";
-$task = new TaskClass("テスト","2021/12/03",false);
+$task = new TaskClass($name,$deadline,false);
 if(isset($_POST['add'])){
     //登録
     $result = $task->registTask();
