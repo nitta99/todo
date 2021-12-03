@@ -33,7 +33,14 @@ class TaskClass{
     public function registTask(){
         require "connect.php";
         $sql = sprintf("INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s','%s',%s);", $this->name, $this->deadline, false);
-        $pdo->exec ($sql);
+        $pdo->exec($sql);
+
+        $check=$pdo->exec($sql);
+        if($check){
+            echo '成功';
+        }else{
+            echo '失敗';
+        }
         echo $sql;
     }
 
