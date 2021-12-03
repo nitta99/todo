@@ -3,7 +3,12 @@ require "task.php";
 $task = new TaskClass($name,$deadline,false);
 if(isset($_POST['add'])){
     //登録
-    $task->registTask();
+    $result = $task->registTask();
+    if ($result) {
+        echo "登録成功";
+    } else {
+        echo "登録失敗";
+    }
 }
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();

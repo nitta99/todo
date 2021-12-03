@@ -32,15 +32,16 @@ class TaskClass{
     //タスクを登録するメソッド
     public function registTask(){
         require "connect.php";
-        $sql = sprintf("INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s', '%s', %s);", $this->name, $this->deadline, false);
-        $pdo->exec($sql);
-        $check=$pdo->exec($sql);
-        if($check){
-            echo '成功';
-        }else{
-            echo '失敗';
+        try{
+            $sql = sprintf("INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s', '%s', %s);", $this->name, $this->deadline, false);
+            echo $sql;
+            $pdo->exec($sql);
+            return true;
+        }catch(PDOException $e){
+            echo "DB登録で例外が発生" . $e->getMessage();
+            return false;
         }
-        echo $sql;
+
     }
 
     //タスクを更新するメソッド
