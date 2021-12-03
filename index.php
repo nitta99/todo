@@ -47,13 +47,9 @@ function nameCheck(){
                     </tr>
                         <tr>
                             <td>タイトル出力スペース</td>
-                            <?php foreach ($result as $data): ?>
-                                <td><?php echo $data[0]."\n" ?></td>
-                            <?php endforeach; ?>
+                                <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>期限出力スペース</td>
-                            <?php foreach ($result as $data): ?>
-                                <td><?php echo $data[1]."\n" ?></td>
-                            <?php endforeach; ?>
+                                <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
                                 <input type="button" value="完了">
                             </td>
