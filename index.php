@@ -38,7 +38,7 @@
                             <input type="date" name="deadline">
                         </td>
                         <td>
-                            <input type="submit" value="登録">
+                            <input type="submit" name="add" value="登録">
                         </td>
                     </tr>
                 </table>
@@ -50,9 +50,10 @@
 <?php
 require "task.php";
 $task = new TaskClass($name,$deadline,false);
-//登録
-$task->registTask();
-
+if(isset($_POST['add'])){
+    //登録
+    $task->registTask();
+}
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
