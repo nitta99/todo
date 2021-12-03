@@ -22,7 +22,7 @@ class TaskMgtClass{
     public function getAllList(){
         require "connect.php";
         try{
-            $sql = "SELECT * FROM public.enquete WHERE 1 = 1";
+            $sql = "SELECT * FROM public.todo WHERE 1 = 1";
             echo $sql;
             $pdo->exec($sql);
             return true;
