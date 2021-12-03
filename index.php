@@ -4,13 +4,13 @@ $task = new TaskClass($name,$deadline,false);
 if(isset($_POST['add'])){
     //登録
     $task->registTask();
-    $check=$pdo->exec($sql);
-    if($check){
-        echo '成功';
-    }else{
-        echo '失敗';
-    }
 }
+$check=$pdo->exec($sql);
+        if($check){
+            echo '成功';
+        }else{
+            echo '失敗';
+        }
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
