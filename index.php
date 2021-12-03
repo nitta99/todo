@@ -1,6 +1,6 @@
 <?php
 require "task.php";
-$task = new TaskClass($name,$deadline,false);
+$task = new TaskClass($_POST['name'],$_POST['deadline'],false);
 if(isset($_POST['add'])){
     //登録
     $result = $task->registTask();
@@ -17,12 +17,12 @@ $taskManager->getExpiredList();
 ?>
 
 <script type="text/javascript">
-function regist(){
+function nameCheck(){
     getName = document.todo.name.value;
     if(getName){
         return true;
     }else {
-        alert("タスク内容を入力してください");
+        alert("タイトルを入力してください");
         return false;
     }
 }
@@ -37,7 +37,7 @@ function regist(){
     </head>
     <body>
         <form action="index.php" method="post" name='todo'
-            onsubmit="return(regist())">
+            onsubmit="return(nameCheck())">
             <div>
                 <h1>ToDoリスト</h1>
                 <table>
@@ -47,9 +47,9 @@ function regist(){
                     </tr>
                         <tr>
                             <td>タイトル出力スペース</td>
-                                <td><?php echo htmlspecialchars(@$name, ENT_QUOTES, 'UTF-8'); ?></td>
+                                <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>期限出力スペース</td>
-                                <td><?php echo htmlspecialchars(@$deadline, ENT_QUOTES, 'UTF-8'); ?></td>
+                                <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
                                 <input type="button" value="完了">
                             </td>
