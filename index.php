@@ -3,9 +3,7 @@ require "task.php";
 $task = new TaskClass($_POST['name'],$_POST['deadline'],false);
 if(isset($_POST['add'])){
     //登録
-    if($_POST['deadline'] === "" || $_POST['deadline']){
     $result = $task->registTask();
-    }
     if ($result) {
         echo "登録成功";
     } else {
