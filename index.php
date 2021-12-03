@@ -10,8 +10,12 @@ if(isset($_POST['add'])){
         echo "登録失敗";
     }
 }
+
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
+//全件タスクを取得
+$taskManager->getAllList();
+$lists = $pdo->exec($sql);
 //未完了タスクを取得
 $taskManager->getExpiredList();
 ?>
@@ -26,7 +30,6 @@ function nameCheck(){
         return false;
     }
 }
-
 </script>
 
 <!doctype html>
@@ -52,6 +55,12 @@ function nameCheck(){
                                 <input type="button" value="完了">
                             </td>
                         </tr>
+                        <?php foreach ($lists as $data): ?>
+                            <tr>
+                            <td><?php echo $data[1]?></td>
+                            <td><?php echo $data[2]?></td>
+                            </tr>
+                        <?php endforeach; ?>
                 </table>
                 <hr>
                 <table>
