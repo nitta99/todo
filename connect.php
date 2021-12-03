@@ -3,9 +3,9 @@
     $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
     try{
         $pdo = new PDO($dsn, $url['user'], $url['pass']);
-    }catch (PDOException $e) {
-        echo 'データベースに接続エラー' . $e->getMessage();
-        exit();
+    }catch(Exception $e){
+        echo 'error' .$e->getMesseage;
+        die();
     }
     //エラーを表示してくれる。
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
