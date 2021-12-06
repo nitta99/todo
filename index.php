@@ -22,16 +22,18 @@ if (isset($_POST['all'])){
 ?>
 
 <script type="text/javascript">
+function nameCheck(){
+    getName = document.todo.name.value;
+    if(getName){
+        return true;
+    }else {
+        alert("タイトルを入力してください");
+        return false;
+    }
+}
 
 function regist(){
     <?php if($_POST['name']): ?>
-        getName = document.todo.name.value;
-        if(getName){
-            return true;
-        }else {
-            alert("タイトルを入力してください");
-            return false;
-        }
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         var result ="<?php var_export($task->registTask()); ?>";
         if(result){
@@ -84,7 +86,7 @@ window.onload = regist;
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input type="submit" name="add" value="登録">
+                            <input type="submit" name="add" value="登録" onclick="nameCheck()">
                         </td>
                         <td>
                             <input type="submit" name="inComplete" value="未完了">
