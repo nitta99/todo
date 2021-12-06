@@ -2,7 +2,7 @@
 require "task.php";
 
 require "taskMgt.php";
-$taskManager = new TaskMgtClass($_POST['name'],$_POST['deadline']);
+$taskManager = new TaskMgtClass();
 //未完了タスクを取得
 $tasklist[] = $taskManager->getIncompleteList();
 ?>
@@ -47,8 +47,8 @@ window.onload = function(){
                     </tr>
                     <?php foreach ($tasklist as $data): ?>
                         <tr>
-                            <td><?php echo $data['name']?></td>
-                            <td><?php echo $data['deadline']?></td>
+                            <td><?php echo $data[1]?></td>
+                            <td><?php echo $data[2]?></td>
                         </tr>
                     <?php endforeach; ?>
                         <tr>
