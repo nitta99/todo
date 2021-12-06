@@ -6,15 +6,10 @@ class TaskMgtClass{
     //未完了タスク一覧を取得するメソッド
     public function getIncompleteList(){
         require "connect.php";
-        try{
-            $sql = "SELECT * FROM public.todo WHERE fix_flg = false;";
-            echo $sql;
-            $pdo->query($sql);
-            return true;
-        }catch(PDOException $e){
-            echo "DB登録で例外が発生" . $e->getMessage();
-            return false;
-        }
+        $sql = "SELECT * FROM public.todo WHERE fix_flg = false;";
+        echo $sql;
+        $result = $pdo->query($sql);
+        return $result;
     }
 
     //完了タスク一覧を取得するメソッド
