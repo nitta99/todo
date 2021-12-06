@@ -34,7 +34,6 @@ class TaskClass{
         require "connect.php";
         try{
             $sql = sprintf("INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s', '%s', %s);", $this->name, $this->deadline, var_export($this->fix_flg, true));
-            echo $sql;
             $pdo->exec($sql);
             return true;
         }catch(PDOException $e){

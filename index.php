@@ -4,7 +4,7 @@ require "task.php";
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
-$taskManager->getExpiredList();
+$tasklist[] = $taskManager->getExpiredList();
 ?>
 
 <script type="text/javascript">
@@ -45,6 +45,12 @@ window.onload = function(){
                         <td>タイトル</td>
                         <td>期限</td>
                     </tr>
+                    <?php foreach ($tasklist as $data): ?>
+                        <tr>
+                            <td><?php echo $data[1]?></td>
+                            <td><?php echo $data[2]?></td>
+                        </tr>
+                    <?php endforeach; ?>
                         <tr>
                             <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
