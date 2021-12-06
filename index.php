@@ -4,7 +4,7 @@ require "task.php";
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
-$tasklist[] = $taskManager->getExpiredList();
+$tasklist[] = $taskManager->getIncompleteList();
 ?>
 
 <script type="text/javascript">
