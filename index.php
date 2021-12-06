@@ -2,9 +2,9 @@
 require "task.php";
 
 require "taskMgt.php";
-$taskManager = new TaskMgtClass();
+$taskManager = new TaskMgtClass($_POST['name'],$_POST['deadline']);
 //未完了タスクを取得
-$tasklist[] = $taskManager->getIncompleteList($_POST['name'],$_POST['deadline']);
+$tasklist[] = $taskManager->getIncompleteList();
 ?>
 
 <script type="text/javascript">
