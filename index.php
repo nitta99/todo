@@ -49,6 +49,7 @@ window.onload = function(){
                         <tr>
                             <td><?php echo $data[1]?></td>
                             <td><?php echo $data[2]?></td>
+                            <td><input type="button" value="完了"></td>
                         </tr>
                     <?php endforeach; ?>
                         <tr>
