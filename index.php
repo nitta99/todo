@@ -1,15 +1,5 @@
 <?php
 require "task.php";
-$task = new TaskClass($_POST['name'],$_POST['deadline'],false);
-if(isset($_POST['add'])){
-    //登録
-    $result = $task->registTask();
-    if ($result) {
-        echo "登録成功";
-    } else {
-        echo "登録失敗";
-    }
-}
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
@@ -26,6 +16,16 @@ function nameCheck(){
         alert("タイトルを入力してください");
         return false;
     }
+}
+
+window.onload = function(){
+    <?php if($_POST['name']): ?>
+        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
+        var result ="<?php var_export($task->registTask()); ?>";
+        if(result){
+            alert('登録完了いたしました');
+        }
+    <?php endif; ?>
 }
 </script>
 
@@ -61,13 +61,13 @@ function nameCheck(){
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" name="name" value="">
+                            <input type="text" id="name" name="name" value="">
                         </td>
                         <td>
-                            <input type="date" name="deadline" value="">
+                            <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input type="submit" name="add" value="登録">
+                            <input type="submit" value="登録">
                         </td>
                     </tr>
                 </table>
