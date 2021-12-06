@@ -24,14 +24,14 @@ if (isset($_POST['all'])){
 <script type="text/javascript">
 
 function regist(){
-    getName = document.todo.name.value;
-    if(getName){
-        return true;
-    }else {
-        alert("タイトルを入力してください");
-        return false;
-    }
     <?php if($_POST['name']): ?>
+        getName = document.todo.name.value;
+        if(getName){
+            return true;
+        }else {
+            alert("タイトルを入力してください");
+            return false;
+        }
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         var result ="<?php var_export($task->registTask()); ?>";
         if(result){
