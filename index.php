@@ -23,12 +23,14 @@ if (isset($_POST['all'])){
 
 <script type="text/javascript">
 function nameCheck(){
-    getName = document.todo.name.value;
-    if(getName){
-        return true;
-    }else {
-        alert("タイトルを入力してください");
-        return false;
+    if(isset($_POST['add'])){
+        getName = document.todo.name.value;
+        if(getName){
+            return true;
+        }else {
+            alert("タイトルを入力してください");
+            return false;
+        }
     }
 }
 
@@ -52,8 +54,7 @@ window.onload = regist;
         <title>ToDoリスト</title>
     </head>
     <body>
-        <form action="index.php" method="post" name='todo'
-            onsubmit="return(nameCheck())">
+        <form action="index.php" method="post" name='todo'>
             <div>
                 <h1>ToDoリスト</h1>
                 <table>
