@@ -4,7 +4,21 @@ require "task.php";
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
-$tasklist = $taskManager->getIncompleteList();
+if (isset($_POST['inComplete'])){
+    $tasklist = $taskManager->getIncompleteList();
+}
+//完了タスクを取得
+if (isset($_POST['complete'])){
+    $tasklist = $taskManager->getCompleteList();
+}
+//期限切れタスクを取得
+if (isset($_POST['expired'])){
+    $tasklist = $taskManager->getExpiredList();
+}
+//全てのタスクを取得
+if (isset($_POST['all'])){
+    $tasklist = $taskManager->getAllList();
+}
 ?>
 
 <script type="text/javascript">
@@ -73,7 +87,19 @@ window.onload = regist;
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input type="submit" value="登録">
+                            <input type="submit" name="add" value="登録">
+                        </td>
+                        <td>
+                            <input type="submit" name="inComplete" value="未完了">
+                        </td>
+                        <td>
+                            <input type="submit" name="complete" value="完了">
+                        </td>
+                        <td>
+                            <input type="submit" name="expired" value="期限切れ">
+                        </td>
+                        <td>
+                            <input type="submit" name="all" value="全て">
                         </td>
                     </tr>
                 </table>
