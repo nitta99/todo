@@ -47,8 +47,8 @@ window.onload = function(){
                     </tr>
                     <?php foreach ($tasklist as $data): ?>
                         <tr>
-                            <td><?php echo $data[1]?></td>
-                            <td><?php echo $data[2]?></td>
+                            <td><?php echo $data['name']?></td>
+                            <td><?php echo $data['deadline']?></td>
                         </tr>
                     <?php endforeach; ?>
                         <tr>
