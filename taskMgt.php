@@ -8,6 +8,7 @@ class TaskMgtClass{
         require "connect.php";
         try{
             $sql = "SELECT * FROM public.todo WHERE fix_flg = false;";
+            echo $sql;
             $pdo->query($sql);
             return true;
         }catch(PDOException $e){
