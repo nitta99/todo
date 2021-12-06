@@ -21,7 +21,8 @@ class TaskClass{
 
     //タスクが完了済みか確認するメソッド
     public function completeTask(){
-
+        require "connect.php";
+        
     }
 
     //タスクが期限切れか確認するメソッド

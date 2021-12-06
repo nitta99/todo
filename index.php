@@ -18,7 +18,7 @@ function nameCheck(){
     }
 }
 
-window.onload = function(){
+function regist(){
     <?php if($_POST['name']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         var result ="<?php var_export($task->registTask()); ?>";
@@ -27,6 +27,8 @@ window.onload = function(){
         }
     <?php endif; ?>
 }
+window.onload = regist;
+
 </script>
 
 <!doctype html>
@@ -55,9 +57,6 @@ window.onload = function(){
                         <tr>
                             <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
-                            <td>
-                                <input type="button" value="完了">
-                            </td>
                         </tr>
                 </table>
                 <hr>
