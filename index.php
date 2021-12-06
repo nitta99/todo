@@ -54,7 +54,8 @@ window.onload = regist;
         <title>ToDoリスト</title>
     </head>
     <body>
-        <form action="index.php" method="post" name='todo'>
+        <form action="index.php" method="post" name='todo'
+            onsubmit="return(nameCheck())">
             <div>
                 <h1>ToDoリスト</h1>
                 <table>
