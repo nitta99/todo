@@ -19,11 +19,10 @@ class TaskClass{
         $this->fix_flg = $fix_flg;
     }
 
-    //タスクが完了済みか確認するメソッド
-    public function completeTask(){
-        require "connect.php";
-        
-    }
+    // //タスクが完了済みか確認するメソッド
+    // public function completeTask(){
+
+    // }
 
     //タスクが期限切れか確認するメソッド
     public function expiredTask(){
