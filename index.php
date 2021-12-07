@@ -61,7 +61,7 @@ window.onload = regist;
                         <td>タイトル</td>
                         <td>期限</td>
                     </tr>
-                    <?php if ($tasklist->expiredTask()): ?>
+                    <?php if ($taskManager->getExpiredList()): ?>
                         <?php foreach ($tasklist as $task): ?>
                             <tr>
                                 <td class="font_red"><?php echo $task->getName(); ?></td>
