@@ -6,22 +6,18 @@ $taskManager = new TaskMgtClass();
 //未完了タスクを取得
 if (isset($_POST['inComplete'])){
     $tasklist = $taskManager->getIncompleteList();
-    print_r($tasklist);
 }
 //完了タスクを取得
 if (isset($_POST['complete'])){
     $tasklist = $taskManager->getCompleteList();
-    print_r($tasklist);
 }
 //期限切れタスクを取得
 if (isset($_POST['expired'])){
     $tasklist = $taskManager->getExpiredList();
-    print_r($tasklist);
 }
 //全てのタスクを取得
 if (isset($_POST['all'])){
     $tasklist = $taskManager->getAllList();
-    print_r($tasklist);
 }
 ?>
 
