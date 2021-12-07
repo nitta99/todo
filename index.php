@@ -5,22 +5,22 @@ require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
 if (isset($_POST['inComplete'])){
-    $tasklist = $taskManager->getIncompleteList();
+    $tasklist = var_export($taskManager->getIncompleteList());
     var_dump($tasklist);
 }
 //完了タスクを取得
 if (isset($_POST['complete'])){
-    $tasklist = $taskManager->getCompleteList();
+    $tasklist = var_export($taskManager->getCompleteList());
     var_dump($tasklist);
 }
 //期限切れタスクを取得
 if (isset($_POST['expired'])){
-    $tasklist = $taskManager->getExpiredList();
+    $tasklist = var_export($taskManager->getExpiredList());
     var_dump($tasklist);
 }
 //全てのタスクを取得
 if (isset($_POST['all'])){
-    $tasklist = $taskManager->getAllList();
+    $tasklist = var_export($taskManager->getAllList());
     var_dump($tasklist);
 }
 ?>
@@ -67,7 +67,8 @@ window.onload = regist;
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
-                            <td><?php echo $task; ?></td>
+                            <td><?php echo $task->name; ?></td>
+                            <td><?php echo $task->deadline; ?></td>
                             <td><input type="button" value="完了"></td>
                         </tr>
                     <?php endforeach; ?>
