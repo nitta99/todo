@@ -67,8 +67,7 @@ window.onload = regist;
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
-                            <td><?php echo $task[1]; ?></td>
-                            <td><?php echo $task[2]; ?></td>
+                            <td><?php echo $task; ?></td>
                             <td><input type="button" value="完了"></td>
                         </tr>
                     <?php endforeach; ?>
