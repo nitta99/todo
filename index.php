@@ -61,21 +61,15 @@ window.onload = regist;
                         <td>タイトル</td>
                         <td>期限</td>
                     </tr>
-                    <?php foreach ($tasklist as $task): ?>
-                        <tr>
-                            <?php if ($task->getIncompleteList()): ?><!-- 未完了タスクは黒色 -->
-                                <td class="font_black"><?php echo $task->getName(); ?></td>
-                                <td class="font_black"><?php echo $task->getDeadline(); ?></td>
-                            <?php elseif ($task->getCompleteList()): ?><!-- 完了タスクは灰色 -->
-                                <td class="font_gray"><?php echo $task->getName(); ?></td>
-                                <td class="font_gray"><?php echo $task->getDeadline(); ?></td>
-                            <?php elseif ($task->getExpiredList()) : ?><!-- 期限切れタスクは赤色 -->
+                    <?php if ($tasklist->expiredTask()): ?>
+                        <?php foreach ($tasklist as $task): ?>
+                            <tr>
                                 <td class="font_red"><?php echo $task->getName(); ?></td>
                                 <td class="font_red"><?php echo $task->getDeadline(); ?></td>
-                            <?php endif; ?>
-                            <td><input type="button" value="完了"></td>
-                        </tr>
-                    <?php endforeach; ?>
+                                <td><input type="button" value="完了"></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                         <tr>
                             <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
