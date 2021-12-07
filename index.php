@@ -4,19 +4,19 @@ require "task.php";
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
-if (isset($_GET['inComplete'])){
+if (isset($_POST['inComplete'])){
     $tasklist = $taskManager->getIncompleteList();
 }
 //完了タスクを取得
-if (isset($_GET['complete'])){
+if (isset($_POST['complete'])){
     $tasklist = $taskManager->getCompleteList();
 }
 //期限切れタスクを取得
-if (isset($_GET['expired'])){
+if (isset($_POST['expired'])){
     $tasklist = $taskManager->getExpiredList();
 }
 //全てのタスクを取得
-if (isset($_GET['all'])){
+if (isset($_POST['all'])){
     $tasklist = $taskManager->getAllList();
 }
 ?>
