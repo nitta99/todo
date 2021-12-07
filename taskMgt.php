@@ -8,7 +8,6 @@ class TaskMgtClass{
         require "connect.php";
         $sql = "SELECT * FROM public.todo WHERE fix_flg = false;";
         $result = $pdo->query($sql);
-        require "task.php";
         foreach($result as $data){
             $task = new TaskClass($data[0], $data[1], $data[2], $data[3]);
             $this->tasklist[] = $task;
@@ -21,7 +20,6 @@ class TaskMgtClass{
         require "connect.php";
         $sql = "SELECT * FROM public.todo WHERE fix_flg = true;";
         $result = $pdo->query($sql);
-        require "task.php";
         foreach($result as $data){
             $task = new TaskClass($data[0], $data[1], $data[2], $data[3]);
             $this->tasklist[] = $task;
@@ -34,7 +32,6 @@ class TaskMgtClass{
         require "connect.php";
         $sql = "SELECT * FROM public.todo WHERE deadline < CURRENT_DATE;";
         $result = $pdo->query($sql);
-        require "task.php";
         foreach($result as $data){
             $task = new TaskClass($data[0], $data[1], $data[2], $data[3]);
             $this->tasklist[] = $task;
@@ -47,7 +44,6 @@ class TaskMgtClass{
         require "connect.php";
         $sql = "SELECT * FROM public.todo;";
         $result = $pdo->exec($sql);
-        require "task.php";
         foreach($result as $data){
             $task = new TaskClass($data[0], $data[1], $data[2], $data[3]);
             $this->tasklist[] = $task;
