@@ -12,11 +12,11 @@ class TaskClass{
     //完了フラグ
     private $fix_flg;
 
-    function __construct($name,$deadline,$fix_flg){
-        $this->id = null;
+    function __construct($name, $deadline, $fix_flg, $id = null){
         $this->name = $name;
         $this->deadline = $deadline;
         $this->fix_flg = $fix_flg;
+        $this->id = $id;
     }
 
     // //タスクが完了済みか確認するメソッド
