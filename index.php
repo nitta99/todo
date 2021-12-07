@@ -71,7 +71,6 @@ window.onload = regist;
                             <td><?php echo $task[2]; ?></td>
                             <td><input type="button" value="完了"></td>
                         </tr>
-                        <?php var_dump($task[1]); ?>
                     <?php endforeach; ?>
                         <tr>
                             <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
