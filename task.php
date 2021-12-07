@@ -1,22 +1,32 @@
 <?php
 class TaskClass{
     //ID
-    public $id;
+    private $id;
 
     //タイトルネーム
-    public $name;
+    private $name;
 
     //期限
-    public $deadline;
+    private $deadline;
 
     //完了フラグ
-    public $fix_flg;
+    private $fix_flg;
 
     function __construct($name, $deadline, $fix_flg, $id = null){
         $this->name = $name;
         $this->deadline = $deadline;
         $this->fix_flg = $fix_flg;
         $this->id = $id;
+    }
+
+    //名前を取得する(getter)
+    public function getName(){
+        return $this->name;
+    }
+
+    //期限を取得する(getter)
+    public function getDeadline(){
+        return $this->deadline;
     }
 
     // //タスクが完了済みか確認するメソッド
