@@ -5,23 +5,23 @@ require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
 if (isset($_POST['inComplete'])){
-    $tasklist = var_export($taskManager->getIncompleteList());
-    var_dump($tasklist);
+    $tasklist = $taskManager->getIncompleteList();
+    print_r($tasklist);
 }
 //完了タスクを取得
 if (isset($_POST['complete'])){
-    $tasklist = var_export($taskManager->getCompleteList());
-    var_dump($tasklist);
+    $tasklist = $taskManager->getCompleteList();
+    print_r($tasklist);
 }
 //期限切れタスクを取得
 if (isset($_POST['expired'])){
-    $tasklist = var_export($taskManager->getExpiredList());
-    var_dump($tasklist);
+    $tasklist = $taskManager->getExpiredList();
+    print_r($tasklist);
 }
 //全てのタスクを取得
 if (isset($_POST['all'])){
-    $tasklist = var_export($taskManager->getAllList());
-    var_dump($tasklist);
+    $tasklist = $taskManager->getAllList();
+    print_r($tasklist);
 }
 ?>
 
