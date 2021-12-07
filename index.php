@@ -67,11 +67,11 @@ window.onload = regist;
                                     <td class="font_red"><?php echo $task->getName(); ?></td>
                                     <td class="font_red"><?php echo $task->getDeadline(); ?></td>
                                     <td><input type="button" value="完了"></td>
-                                <?php elseif($tasklist->getIncompleteList()): ?>
+                                <?php elseif($task->getIncompleteList()): ?>
                                     <td class="font_black"><?php echo $task->getName(); ?></td>
                                     <td class="font_black"><?php echo $task->getDeadline(); ?></td>
                                     <td><input type="button" value="完了"></td>
-                                <?php elseif($tasklist->getCompleteList()): ?>
+                                <?php elseif($task->getCompleteList()): ?>
                                     <td class="font_gray"><?php echo $task->getName(); ?></td>
                                     <td class="font_gray"><?php echo $task->getDeadline(); ?></td>
                                     <td><input type="button" value="完了"></td>
