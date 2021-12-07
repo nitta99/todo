@@ -42,7 +42,7 @@ class TaskMgtClass{
     //全てのタスク一覧を取得するメソッド
     public function getAllList(){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE 1=1;";
+        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo order by id;";
         $result = $pdo->exec($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
