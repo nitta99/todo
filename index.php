@@ -61,15 +61,15 @@ window.onload = regist;
                         <td>タイトル</td>
                         <td>期限</td>
                     </tr>
-                    <?php if ($taskManager->getExpiredList()): ?>
                         <?php foreach ($tasklist as $task): ?>
                             <tr>
+                            <?php if ($task->getExpiredList()): ?>
                                 <td class="font_red"><?php echo $task->getName(); ?></td>
                                 <td class="font_red"><?php echo $task->getDeadline(); ?></td>
                                 <td><input type="button" value="完了"></td>
+                            <?php endif; ?>
                             </tr>
                         <?php endforeach; ?>
-                    <?php endif; ?>
                         <tr>
                             <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
