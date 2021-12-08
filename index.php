@@ -63,7 +63,7 @@ window.onload = regist;
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
-                        <?php if ($task->expiredTask()) : ?>
+                        <?php if ($task->expiredTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
                             <td class="font_red"><?php echo $task->getDeadline(); ?></td>
                         <?php else: ?>
