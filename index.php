@@ -69,10 +69,13 @@ window.onload = regist;
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
-                        <?php if ($task->expiredTask()): ?>
+                        <?php if ($task->expiredTask() && !$task->completeTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
                             <td class="font_red"><?php echo $task->getDeadline(); ?></td>
                             <td><input type="submit" name="complete" value="完了"></td>
+                        <?php elseif($task->expiredTask() && $task->completeTask()): ?>
+                            <td class="font_red"><?php echo $task->getName(); ?></td>
+                            <td class="font_red"><?php echo $task->getDeadline(); ?></td>
                         <?php elseif($task->completeTask()): ?>
                             <td class="font_gray"><?php echo $task->getName(); ?></td>
                             <td class="font_gray"><?php echo $task->getDeadline(); ?></td>
