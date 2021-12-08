@@ -61,17 +61,18 @@ window.onload = regist;
                         <td>タイトル</td>
                         <td>期限</td>
                     </tr>
-                        <?php foreach ($tasklist as $task): ?>
-                            <tr>
-                                <td><?php echo $task->getName(); ?></td>
-                                <td><?php echo $task->getDeadline(); ?></td>
-                                <td><input type="button" value="完了"></td>
-                            </tr>
-                        <?php endforeach; ?>
+                    <?php foreach ($tasklist as $task): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
-                            <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
+                            <td><?php echo $task->getName(); ?></td>
+                            <td><?php echo $task->getDeadline(); ?></td>
+                            <td><input type="button" value="完了"></td>
                         </tr>
+                    <?php endforeach; ?>
+                    <hr>
+                    <tr>
+                        <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
+                        <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
+                    </tr>
                 </table>
                 <hr>
                 <table>
