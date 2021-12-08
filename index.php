@@ -63,13 +63,18 @@ window.onload = regist;
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
-                            <td><?php echo $task->getName(); ?></td>
-                            <td><?php echo $task->getDeadline(); ?></td>
+                        <?php if ($task->expiredTask()) : ?>
+                            <td class="font_red"><?php echo $task->getName(); ?></td>
+                            <td class="font_red"><?php echo $task->getDeadline(); ?></td>
+                        <?php else: ?>
+                            <td class="font_black"><?php echo $task->getName(); ?></td>
+                            <td class="font_black"><?php echo $task->getDeadline(); ?></td>
+                        <?php endif; ?>
                             <td><input type="button" value="完了"></td>
                         </tr>
                     <?php endforeach; ?>
-                    <hr>
                     <tr>
+                        <td>登録内容</td>
                         <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                         <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
