@@ -36,9 +36,9 @@ class TaskClass{
 
     //タスクが期限切れか確認するメソッド
     public function expiredTask(){
-        $today = date('Y-m-d');
-        $expired_flag = $this->deadline;
-        if(strtotime($today) > strtotime($expired_flag)){
+        $today = strtotime(date('Y-m-d'));
+        $expired_flag = strtotime($this->deadline);
+        if($today > $expired_flag){
             return true;
         }else {
             return false;
