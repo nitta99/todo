@@ -1,5 +1,10 @@
 <?php
 require "task.php";
+$task = new TaskClass($_POST['name'],$_POST['deadline'],false);
+//タスク更新する
+if (isset($_POST['complete'])){
+    $update = $task->updateTask($_POST['id']);
+}
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
@@ -74,7 +79,7 @@ window.onload = regist;
                             <td class="font_black"><?php echo $task->getName(); ?></td>
                             <td class="font_black"><?php echo $task->getDeadline(); ?></td>
                         <?php endif; ?>
-                            <td><input type="button" value="完了"></td>
+                            <td><input type="submit" name="complete" value="完了"></td>
                         </tr>
                     <?php endforeach; ?>
                     <tr>

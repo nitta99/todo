@@ -60,12 +60,19 @@ class TaskClass{
             echo "DB登録で例外が発生" . $e->getMessage();
             return false;
         }
-
     }
 
     //タスクを更新するメソッド
-    public function updateTask(){
-        
+    public function updateTask($id){
+        require "connect.php";
+        try{
+            $sql = sprintf("UPDATE public.todo SET %s==%s WHERE id = $id;", $this->fix_flg, true);
+            $pdo->exec($sql);
+            return true;
+        }catch(PDOException $e){
+            echo "DB登録で例外が発生" . $e->getMessage();
+            return false;
+        }
     }
 }
 ?>
