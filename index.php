@@ -3,7 +3,7 @@ require "task.php";
 $task = new TaskClass($_POST['name'],$_POST['deadline'],false);
 //タスク更新する
 if (isset($_POST['complete'])){
-    $task->updateTask($_POST['id']);
+    $task->updateTask($this->$id);
 }
 
 require "taskMgt.php";
