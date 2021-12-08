@@ -65,7 +65,7 @@ class TaskClass{
 
     //タスクを更新するメソッド
     public function updateTask(){
-
+        
     }
 }
 ?>

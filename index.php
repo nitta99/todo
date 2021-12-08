@@ -97,7 +97,7 @@ window.onload = regist;
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input type="submit" name="add" value="登録" onclick="nameCheck()">
+                            <input type="submit" value="登録" onclick="nameCheck()">
                         </td>
                         <td>
                             <input type="submit" name="inComplete" value="未完了">
