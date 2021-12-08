@@ -38,7 +38,7 @@ class TaskClass{
     public function expiredTask(){
         $today = strtotime(date('Y-m-d'));
         $expired_flag = strtotime($this->deadline);
-        echo $expired_flag;
+        echo $today > $expired_flag;
         if($today > $expired_flag){
             return true;
         }else {
