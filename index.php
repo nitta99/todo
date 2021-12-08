@@ -84,7 +84,6 @@ window.onload = regist;
                         </tr>
                     <?php endforeach; ?>
                     <tr>
-                        <td>登録内容</td>
                         <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                         <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
