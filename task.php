@@ -29,16 +29,19 @@ class TaskClass{
         return $this->deadline;
     }
 
-    // //タスクが完了済みか確認するメソッド
-    // public function completeTask(){
-
-    // }
+    //タスクが完了済みか確認するメソッド
+    public function completeTask(){
+        if($this->fix_flg === true){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     //タスクが期限切れか確認するメソッド
     public function expiredTask(){
         $today = strtotime(date('Y-m-d'));
         $expired_flag = strtotime($this->deadline);
-        echo $today > $expired_flag;
         if($today > $expired_flag){
             return true;
         }else {
