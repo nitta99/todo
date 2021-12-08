@@ -50,6 +50,7 @@ window.onload = regist;
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="todo.css" media="all" />
         <title>ToDoリスト</title>
     </head>
     <body>
