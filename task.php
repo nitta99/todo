@@ -68,10 +68,10 @@ class TaskClass{
     }
 
     //タスクを更新するメソッド
-    public function updateTask(){
+    public function updateTask($id){
         require "connect.php";
         try{
-            $sql = sprintf("UPDATE public.todo SET fix_flg=true WHERE id = %d;", $this->id);
+            $sql = sprintf("UPDATE public.todo SET fix_flg=true WHERE id = $id;");
             echo $sql;
             $pdo->exec($sql);
             return true;
