@@ -48,11 +48,7 @@ window.onload = regist;
 
 function update(){
     <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['id']); ?>
-    complete ="<?php var_export($task->updateTask()); ?>";
-    var_dump(complete);
-    if(complete){
-        alert('完了タスクに移動します');
-    }
+    <?php var_export($task->updateTask()); ?>
 }
 
 </script>
