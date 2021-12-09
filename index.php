@@ -46,7 +46,7 @@ window.onload = regist;
 
 function update(){
     <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-    <?php var_export($task->registTask()); ?>
+    <?php var_export($task->updateTask()); ?>
 }
 
 </script>
