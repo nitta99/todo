@@ -3,7 +3,6 @@ require "task.php";
 $task = new TaskClass($_POST['name'],$_POST['deadline'],false);
 //タスク更新する
 if (isset($_POST['complete'])){
-    $task->updateTask($_POST['id']);
 }
 
 require "taskMgt.php";
@@ -47,7 +46,7 @@ function regist(){
         }
     <?php endif; ?>
 }
-
+window.onload = regist;
 
 function update(){
     <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
@@ -110,7 +109,7 @@ function update(){
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input type="submit" value="登録" onclick="nameCheck(); regist()">
+                            <input type="submit" value="登録" onclick="nameCheck()">
                         </td>
                         <td>
                             <input type="submit" name="inComplete" value="未完了">
