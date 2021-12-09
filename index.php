@@ -1,5 +1,7 @@
 <?php
 require "task.php";
+$task = new TaskClass($_POST['name'],$_POST['deadline'],false);
+$task->updateTask();
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
