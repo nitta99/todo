@@ -72,7 +72,6 @@ class TaskClass{
         require "connect.php";
         try{
             $sql = sprintf("UPDATE public.todo SET fix_flg=true WHERE id = $id;");
-            echo $sql;
             $pdo->exec($sql);
             return true;
         }catch(PDOException $e){
