@@ -47,8 +47,8 @@ function regist(){
 window.onload = regist;
 
 function updateOnflg(){
-    <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['id']); ?>;
-    <?php var_export($task->updateTask()); ?>;
+    <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['id']); ?>
+    <?php var_export($task->updateTask()); ?>
 }
 
 </script>
