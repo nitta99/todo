@@ -1,7 +1,5 @@
 <?php
 require "task.php";
-$task = new TaskClass($_POST['name'],$_POST['deadline'],false);
-$task->updateTask();
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
@@ -45,7 +43,7 @@ function regist(){
     <?php endif; ?>
     <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-        <?php var_export($task->updateTask()); ?>
+        <?php var_export($task->updateTask($_POST['taskId'])); ?>
     <?php endif; ?>
 }
 window.onload = regist;
