@@ -19,6 +19,11 @@ class TaskClass{
         $this->id = $id;
     }
 
+    //IDを取得する(getter)
+    public function getId(){
+        return $this->id;
+    }
+
     //名前を取得する(getter)
     public function getName(){
         return $this->name;
@@ -63,10 +68,10 @@ class TaskClass{
     }
 
     //タスクを更新するメソッド
-    public function updateTask($id){
+    public function updateTask(){
         require "connect.php";
         try{
-            $sql = sprintf("UPDATE public.todo SET %s==%s WHERE id = $id;", $this->fix_flg, true);
+            $sql = sprintf("UPDATE public.todo SET %s==%s WHERE id = %s;", $this->fix_flg, true, $this->fix_flg);
             $pdo->exec($sql);
             return true;
         }catch(PDOException $e){

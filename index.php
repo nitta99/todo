@@ -47,7 +47,11 @@ function regist(){
         }
     <?php endif; ?>
 }
-window.onload = regist;
+
+function update(){
+    <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
+
+}
 
 </script>
 
@@ -72,7 +76,7 @@ window.onload = regist;
                         <?php if ($task->expiredTask() && !$task->completeTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
                             <td class="font_red"><?php echo $task->getDeadline(); ?></td>
-                            <td><input type="submit" name="complete" value="完了"></td>
+                            <td><input type="button" name="complete" onclick="update(<? echo $task->getId() ?>)" value="完了"></td>
                         <?php elseif($task->expiredTask() && $task->completeTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
                             <td class="font_red"><?php echo $task->getDeadline(); ?></td>
@@ -82,7 +86,7 @@ window.onload = regist;
                         <?php else: ?>
                             <td class="font_black"><?php echo $task->getName(); ?></td>
                             <td class="font_black"><?php echo $task->getDeadline(); ?></td>
-                            <td><input type="submit" name="complete" value="完了"></td>
+                            <td><input type="button" name="complete" onclick="update()" value="完了"></td>
                         <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
@@ -105,7 +109,7 @@ window.onload = regist;
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input type="submit" value="登録" onclick="nameCheck()">
+                            <input type="submit" value="登録" onclick="nameCheck(); regist()">
                         </td>
                         <td>
                             <input type="submit" name="inComplete" value="未完了">
