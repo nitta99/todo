@@ -36,7 +36,7 @@ function regist(){
     <?php if($_POST['name']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         result ="<?php var_export($task->registTask()); ?>";
-        // var_dump(result);
+        var_dump(result);
         if(result){
             alert('登録完了いたしました');
         }
@@ -46,7 +46,11 @@ window.onload = regist;
 
 function update(){
     <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['id']); ?>
-    <?php $task->updateTask(); ?>
+    complete ="<?php var_export($task->updateTask()); ?>";
+    var_dump(complete);
+    if(complete){
+        alert('完了タスクに移動します');
+    }
 }
 
 </script>
