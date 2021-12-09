@@ -43,12 +43,16 @@ function regist(){
             alert('登録完了いたしました');
         }
     <?php endif; ?>
+    <?php if($_POST['taskId']): ?>
+        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
+        <?php var_export($task->updateTask()); ?>
+    <?php endif; ?>
 }
 window.onload = regist;
 
-function updateOnflg(){
-    <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['id']); ?>
-    <?php var_export($task->updateTask()); ?>
+function updateOnflg(id){
+    document.todo.taskId.value = id;
+    document.todo.submit();
 }
 
 </script>
@@ -62,6 +66,7 @@ function updateOnflg(){
     </head>
     <body>
         <form action="index.php" method="post" name='todo'>
+            <input type="hidden" name="taskId" value="" >
             <div>
                 <h1>ToDoリスト</h1>
                 <table>
