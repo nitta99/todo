@@ -46,7 +46,7 @@ function regist(){
         <?php var_export($task->updateTask($_POST['taskId'])); ?>
     <?php endif; ?>
 }
-window.onload = regist;
+// window.onload = regist;
 
 function updateOnflg(id){
     check = window.confirm('このタスクを完了します');
@@ -116,7 +116,7 @@ function updateOnflg(id){
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input type="submit" value="登録" onclick="nameCheck()">
+                            <input type="submit" value="登録" onclick="nameCheck();regist()">
                         </td>
                         <td>
                             <input type="submit" name="inComplete" value="未完了">
