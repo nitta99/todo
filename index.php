@@ -1,9 +1,5 @@
 <?php
 require "task.php";
-$task = new TaskClass($_POST['name'],$_POST['deadline'],false);
-//タスク更新する
-if (isset($_POST['complete'])){
-}
 
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
@@ -76,7 +72,7 @@ function update(){
                         <?php if ($task->expiredTask() && !$task->completeTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
                             <td class="font_red"><?php echo $task->getDeadline(); ?></td>
-                            <td><input type="button" name="complete" onclick="update(<? echo $task->getId() ?>)" value="完了"></td>
+                            <td><input type="button" onclick="update(<? echo $task->getId() ?>)" value="完了"></td>
                         <?php elseif($task->expiredTask() && $task->completeTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
                             <td class="font_red"><?php echo $task->getDeadline(); ?></td>
@@ -86,7 +82,7 @@ function update(){
                         <?php else: ?>
                             <td class="font_black"><?php echo $task->getName(); ?></td>
                             <td class="font_black"><?php echo $task->getDeadline(); ?></td>
-                            <td><input type="button" name="complete" onclick="update(<? echo $task->getId() ?>)" value="完了"></td>
+                            <td><input type="button" onclick="update(<? echo $task->getId() ?>)" value="完了"></td>
                         <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
