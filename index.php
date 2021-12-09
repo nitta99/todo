@@ -34,7 +34,7 @@ function nameCheck(){
 
 function regist(){
     <?php if($_POST['name']): ?>
-        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
+        <?php $task = new TaskClass($_POST['name'],null,false); ?>
         result ="<?php var_export($task->registTask()); ?>";
         var_dump(result);
         if(result){
