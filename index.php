@@ -45,10 +45,8 @@ function regist(){
 window.onload = regist;
 
 function update(){
-    <?php if($_POST['id']): ?>
-        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-        <?php $task->updateTask(); ?>
-    <?php endif; ?>
+    <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['id']); ?>
+    <?php $task->updateTask(); ?>
 }
 
 </script>
