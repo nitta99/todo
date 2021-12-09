@@ -49,9 +49,14 @@ function regist(){
 window.onload = regist;
 
 function updateOnflg(id){
-    window.confirm('このタスクを完了します');
-    document.todo.taskId.value = id;
-    document.todo.submit();
+    check = window.confirm('このタスクを完了します');
+    if (check){
+        document.todo.taskId.value = id;
+        document.todo.submit();
+        return true;
+    }else{
+        return false;
+    }
 }
 
 </script>
