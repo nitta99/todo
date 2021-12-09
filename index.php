@@ -38,19 +38,20 @@ function nameCheck(){
 }
 
 function regist(){
-    <?php if($_POST['name']): ?>
+    <?php if($_POST['name'] || ($_POST['name'] && !$_POST['deadline'])): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-        var result ="<?php var_export($task->registTask()); ?>";
-        var_dump(result);
+        result ="<?php var_export($task->registTask()); ?>";
+        // var_dump(result);
         if(result){
             alert('登録完了いたしました');
         }
     <?php endif; ?>
 }
 
+
 function update(){
     <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-
+    <?php var_export($task->registTask()); ?>
 }
 
 </script>
