@@ -48,6 +48,7 @@ function update(){
     <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['id']); ?>
     <?php $task->updateTask(); ?>
 }
+window.onload = update;
 
 </script>
 
