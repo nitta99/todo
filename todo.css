@@ -126,6 +126,3 @@ input.text {
 .buttonarea{
     margin: 0 auto;/*中央寄せ*/
 }
-table.buttonarea td{
-    margin: 0 10px 0 10px;
-}
