@@ -95,8 +95,12 @@
 	border-style: double;
 }
 .textarea{
+    margin: 0 auto;/*中央寄せ*/
     width:700px;
 }
 input.text {
     width: 400px;
+}
+.buttonarea{
+    margin: 0 auto;/*中央寄せ*/
 }

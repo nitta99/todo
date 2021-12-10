@@ -102,7 +102,7 @@ function updateOnflg(id){
                     </tr>
                 </table>
                 <hr class="hr-border">
-                <table>
+                <table class="buttonarea">
                     <tr>
                         <td>
                             <input class="inCompleteButton" type="submit" name="inComplete" value="未完了">
