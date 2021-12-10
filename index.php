@@ -110,15 +110,6 @@ function updateOnflg(id){
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="name" name="name" value="">
-                        </td>
-                        <td>
-                            <input type="date" id="deadline" name="deadline" value="">
-                        </td>
-                        <td>
-                            <input class="registButton" type="submit" value="登録" onclick="nameCheck()">
-                        </td>
-                        <td>
                             <input class="inCompleteButton" type="submit" name="inComplete" value="未完了">
                         </td>
                         <td>
@@ -129,6 +120,17 @@ function updateOnflg(id){
                         </td>
                         <td>
                             <input class="allButton" type="submit" name="all" value="全て">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="name" name="name" value="">
+                        </td>
+                        <td>
+                            <input type="date" id="deadline" name="deadline" value="">
+                        </td>
+                        <td>
+                            <input class="registButton" type="submit" value="登録" onclick="nameCheck()">
                         </td>
                     </tr>
                 </table>
