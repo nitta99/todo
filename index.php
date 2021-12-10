@@ -73,7 +73,7 @@ function updateOnflg(id){
             <input type="hidden" name="taskId" value="" >
             <div class="contact">
                 <h1>ToDoリスト</h1>
-                <table class="contact">
+                <table>
                     <tr>
                         <td class="font-change">タイトル</td>
                         <td class="font-change">期限</td>
@@ -98,8 +98,8 @@ function updateOnflg(id){
                         </tr>
                     <?php endforeach; ?>
                     <tr>
-                        <td><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
+                        <td class="font-change"><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
+                        <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                 </table>
                 <hr>
