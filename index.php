@@ -120,8 +120,8 @@ function updateOnflg(id){
                 </table>
                 <table class="textarea">
                     <tr>
-                        <td class="text">
-                            <input type="text" id="name" name="name" value="">
+                        <td>
+                            <input class="text" type="text" id="name" name="name" value="">
                         </td>
                         <td>
                             <input type="date" id="deadline" name="deadline" value="">
