@@ -88,19 +88,26 @@
     width:960px;
     margin: 0 auto;/*中央寄せ*/
 }
+.titlearea{
+    text-align: center;
+}
 table.listarea{
+    margin: 0 auto;/*中央寄せ*/
     margin-top: 10px;
+    border: 1px solid;
 }
 table.listarea th{
     width: 300px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
+    border: solid 1px;
 }
 table.listarea td{
     width: 300px;
     padding: 10px;
     vertical-align: top;
+    border: solid 1px;
 }
 .hr-border {
 	border-style: double;
