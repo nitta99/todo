@@ -83,7 +83,7 @@ function updateOnflg(id){
                         <?php if ($task->expiredTask() && !$task->completeTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
                             <td class="font_red"><?php echo $task->getDeadline(); ?></td>
-                            <td><input type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了"></td>
+                            <td><input class="expiredButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了"></td>
                         <?php elseif($task->expiredTask() && $task->completeTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
                             <td class="font_red"><?php echo $task->getDeadline(); ?></td>
@@ -93,7 +93,7 @@ function updateOnflg(id){
                         <?php else: ?>
                             <td class="font_black"><?php echo $task->getName(); ?></td>
                             <td class="font_black"><?php echo $task->getDeadline(); ?></td>
-                            <td><input type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了"></td>
+                            <td><input class="inCompleteButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了"></td>
                         <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
@@ -119,16 +119,16 @@ function updateOnflg(id){
                             <input type="submit" value="登録" onclick="nameCheck()">
                         </td>
                         <td>
-                            <input type="submit" name="inComplete" value="未完了">
+                            <input class="inCompleteButton" type="submit" name="inComplete" value="未完了">
                         </td>
                         <td>
-                            <input type="submit" name="complete" value="完了">
+                            <input class="completeButton" type="submit" name="complete" value="完了">
                         </td>
                         <td>
-                            <input type="submit" name="expired" value="期限切れ">
+                            <input class="expiredButton" type="submit" name="expired" value="期限切れ">
                         </td>
                         <td>
-                            <input type="submit" name="all" value="全て">
+                            <input class="allButton" type="submit" name="all" value="全て">
                         </td>
                     </tr>
                 </table>

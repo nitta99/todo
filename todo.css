@@ -7,3 +7,59 @@
 .font_gray{
     color: gray;
 }
+.completeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 18px;
+    width: 85px;
+    height: 35px;
+    font-weight: bold;
+    background-color: gray;
+}
+.expiredButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 18px;
+    width: 85px;
+    height: 35px;
+    font-weight: bold;
+    background-color: red;
+}
+.inCompleteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 18px;
+    width: 85px;
+    height: 35px;
+    font-weight: bold;
+    background-color: #000000;
+}
+.allButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 18px;
+    width: 85px;
+    height: 35px;
+    font-weight: bold;
+    background-color: blue;
+}
