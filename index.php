@@ -90,6 +90,7 @@ function updateOnflg(id){
                             <?php elseif($task->completeTask()): ?>
                                 <td class="font_gray"><?php echo $task->getName(); ?></td>
                                 <td class="font_gray"><?php echo $task->getDeadline(); ?></td>
+                                <td><td><input type="hidden" value=""></td></td>
                             <?php else: ?>
                                 <td class="font_black"><?php echo $task->getName(); ?></td>
                                 <td class="font_black"><?php echo $task->getDeadline(); ?></td>
