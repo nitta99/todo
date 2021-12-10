@@ -94,3 +94,6 @@
 .hr-border {
 	border-style: double;
 }
+.textarea{
+    width:960px;
+}
