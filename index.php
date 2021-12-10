@@ -73,7 +73,7 @@ function updateOnflg(id){
             <input type="hidden" name="taskId" value="" >
             <div class="contact">
                 <h1>ToDoリスト</h1>
-                <table>
+                <table class="contact-table">
                     <tr>
                         <td class="font-change">タイトル</td>
                         <td class="font-change">期限</td>
