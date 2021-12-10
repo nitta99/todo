@@ -88,8 +88,9 @@
     width:960px;
     margin: 0 auto;/*中央寄せ*/
 }
-.contact-table{
+.listarea{
     width:500px;
+    margin: 0 auto;/*中央寄せ*/
 }
 .hr-border {
 	border-style: double;
@@ -103,4 +104,8 @@ input.text {
 }
 .buttonarea{
     margin: 0 auto;/*中央寄せ*/
+}
+table.listarea td{
+    border-collapse: separate;
+    border-spacing: 8px 0px;
 }
