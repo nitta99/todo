@@ -121,12 +121,8 @@ function updateOnflg(id){
                 </table>
                 <table>
                     <tr>
-                        <td class="font-change">タイトル</td>
-                        <td class="font-change">期限</td>
-                    </tr>
-                    <tr>
                         <td>
-                            <input type="text" id="name" name="name" value="">
+                            <input class="text" type="text" id="name" name="name" value="">
                         </td>
                         <td>
                             <input type="date" id="deadline" name="deadline" value="">

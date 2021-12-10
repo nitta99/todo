@@ -82,5 +82,8 @@
 }
 .font-change{
     font-weight:bold;
-    font-size: 15px;
+    font-size: 18px;
+}
+.text{
+    width: 30%;
 }
