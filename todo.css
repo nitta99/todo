@@ -90,3 +90,7 @@
 .contact-table{
     width:500px;
 }
+.hr-border {
+	border-width: 3px 0 0 0;
+	border-style: double;
+}

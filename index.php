@@ -102,7 +102,7 @@ function updateOnflg(id){
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                 </table>
-                <hr>
+                <hr class="hr-border">
                 <table>
                     <tr>
                         <td>
