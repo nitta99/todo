@@ -86,11 +86,11 @@
 }
 .contact{
     width:960px;
+    margin: 0 auto;/*中央寄せ*/
 }
 .contact-table{
     width:500px;
 }
 .hr-border {
-	border-width: 3px 0 0 0;
 	border-style: double;
 }
