@@ -88,6 +88,9 @@
     width:960px;
     margin: 0 auto;/*中央寄せ*/
 }
+.titlearea{
+    margin: 0 auto;/*中央寄せ*/
+}
 .listarea{
     width:500px;
     margin: 0 auto;/*中央寄せ*/
