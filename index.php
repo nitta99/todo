@@ -105,10 +105,6 @@ function updateOnflg(id){
                 <hr>
                 <table>
                     <tr>
-                        <td class="font-change">タイトル</td>
-                        <td class="font-change">期限</td>
-                    </tr>
-                    <tr>
                         <td>
                             <input class="inCompleteButton" type="submit" name="inComplete" value="未完了">
                         </td>
@@ -121,6 +117,10 @@ function updateOnflg(id){
                         <td>
                             <input class="allButton" type="submit" name="all" value="全て">
                         </td>
+                    </tr>
+                    <tr>
+                        <td class="font-change">タイトル</td>
+                        <td class="font-change">期限</td>
                     </tr>
                     <tr>
                         <td>
