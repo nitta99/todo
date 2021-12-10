@@ -78,11 +78,13 @@ function updateOnflg(id){
                         <th class="font-change">期限</th>
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
-                        <tr class="tasklist">
+                        <tr>
                             <?php if ($task->expiredTask() && !$task->completeTask()): ?>
                                 <td class="font_red"><?php echo $task->getName(); ?></td>
                                 <td class="font_red"><?php echo $task->getDeadline(); ?></td>
-                                <td><input class="expiredButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了"></td>
+                                <td>
+                                    <input class="expiredButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了">
+                                </td>
                             <?php elseif($task->expiredTask() && $task->completeTask()): ?>
                                 <td class="font_red"><?php echo $task->getName(); ?></td>
                                 <td class="font_red"><?php echo $task->getDeadline(); ?></td>
@@ -92,7 +94,9 @@ function updateOnflg(id){
                             <?php else: ?>
                                 <td class="font_black"><?php echo $task->getName(); ?></td>
                                 <td class="font_black"><?php echo $task->getDeadline(); ?></td>
-                                <td><input class="inCompleteButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了"></td>
+                                <td>
+                                    <input class="inCompleteButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了">
+                                </td>
                             <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
