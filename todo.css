@@ -92,6 +92,9 @@
     width:500px;
     margin: 0 auto;/*中央寄せ*/
 }
+table.contact-table th{
+    text-align: left;
+}
 .hr-border {
 	border-style: double;
 }
