@@ -118,9 +118,9 @@ function updateOnflg(id){
                         </td>
                     </tr>
                 </table>
-                <table>
+                <table class="textarea">
                     <tr>
-                        <td>
+                        <td class="text">
                             <input type="text" id="name" name="name" value="">
                         </td>
                         <td>
