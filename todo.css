@@ -2,22 +2,16 @@
     color: red;
     font-weight:bold;
     background-image: linear-gradient(180deg, #ccc 1.5px, transparent 1.5px); /* 罫線の色と太さ  */
-    display: flex;
-    align-items: center;
 }
 .font_black{
     color: black;
     font-weight:bold;
     background-image: linear-gradient(180deg, #ccc 1.5px, transparent 1.5px); /* 罫線の色と太さ  */
-    display: flex;
-    align-items: center;
 }
 .font_gray{
     color: gray;
     font-weight:bold;
     background-image: linear-gradient(180deg, #ccc 1.5px, transparent 1.5px); /* 罫線の色と太さ  */
-    display: flex;
-    align-items: center;
 }
 .completeButton {
     display: flex;
