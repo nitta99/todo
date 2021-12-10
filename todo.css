@@ -89,7 +89,7 @@
     margin: 0 auto;/*中央寄せ*/
 }
 .titlearea{
-    margin: 0 auto;/*中央寄せ*/
+    text-align: center;
 }
 .listarea{
     width:500px;
