@@ -116,7 +116,7 @@ function updateOnflg(id){
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input type="submit" value="登録" onclick="nameCheck()">
+                            <input class="registButton" type="submit" value="登録" onclick="nameCheck()">
                         </td>
                         <td>
                             <input class="inCompleteButton" type="submit" name="inComplete" value="未完了">
