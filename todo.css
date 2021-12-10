@@ -98,6 +98,21 @@ table.listarea{
     border: 1px solid #ccc;
     line-height: 1.5;
 }
+table.listarea th{
+    width: 300px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #3f3f3f;
+    color: #ffffff;
+    border: solid 1px;
+}
+table.listarea td{
+    width: 300px;
+    padding: 10px;
+    vertical-align: top;
+    border: solid 1px;
+}
 .hr-border {
 	border-style: double;
 }
