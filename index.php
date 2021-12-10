@@ -79,6 +79,7 @@ function updateOnflg(id){
                         <td class="font-change">期限</td>
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
+                        <hr class="cp_hr04" />
                         <tr>
                         <?php if ($task->expiredTask() && !$task->completeTask()): ?>
                             <td class="font_red"><?php echo $task->getName(); ?></td>
