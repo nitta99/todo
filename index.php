@@ -35,10 +35,13 @@ function nameCheck(){
 function regist(){
     <?php if($_POST['name']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-        result ="<?php var_export($task->registTask()); ?>";
-        // var_dump(result);
-        if(result){
+        check = window.confirm('このタスクを登録しますか？');
+        if(check){
+            <?php var_export($task->registTask()); ?>
             alert('登録完了いたしました');
+            return true;
+        }else{
+            return false;
         }
     <?php endif; ?>
     <?php if($_POST['taskId']): ?>
