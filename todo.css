@@ -1,11 +1,14 @@
 .font_red{
     color: red;
+    font-weight:bold;
 }
 .font_black{
     color: black;
+    font-weight:bold;
 }
 .font_gray{
     color: gray;
+    font-weight:bold;
 }
 .completeButton {
     display: flex;
@@ -76,4 +79,8 @@
     height: 35px;
     font-weight: bold;
     background-color: #03A90A;
+}
+.font-change{
+    font-weight:bold;
+    font-size: 10px;
 }
