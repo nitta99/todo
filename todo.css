@@ -2,19 +2,16 @@
     color: red;
     font-weight:bold;
     background-image: linear-gradient(180deg, #ccc 1.5px, transparent 1.5px); /* 罫線の色と太さ  */
-    vertical-align: middle;
 }
 .font_black{
     color: black;
     font-weight:bold;
     background-image: linear-gradient(180deg, #ccc 1.5px, transparent 1.5px); /* 罫線の色と太さ  */
-    vertical-align: middle;
 }
 .font_gray{
     color: gray;
     font-weight:bold;
     background-image: linear-gradient(180deg, #ccc 1.5px, transparent 1.5px); /* 罫線の色と太さ  */
-    vertical-align: middle;
 }
 .completeButton {
     display: flex;
@@ -114,6 +111,7 @@ table.listarea td{
     padding: 10px;
     vertical-align: top;
     border:1px;
+    vertical-align: middle;
 }
 .hr-border {
 	border-style: double;
