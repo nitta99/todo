@@ -90,6 +90,7 @@
 }
 .contact-table{
     width:500px;
+    margin: 0 auto;/*中央寄せ*/
 }
 .hr-border {
 	border-style: double;
