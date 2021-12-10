@@ -86,11 +86,13 @@
 }
 .contact{
     width:960px;
+    margin: 0 auto;/*中央寄せ*/
 }
 .titlearea{
     text-align: center;
 }
 table.listarea{
+    margin-left: auto;
     margin-top: 10px;
     border: 1px;
 }
