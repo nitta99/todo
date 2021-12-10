@@ -16,7 +16,9 @@ if (isset($_POST['expired'])){
     $tasklist = $taskManager->getExpiredList();
 }
 //全てのタスクを取得
-$tasklist = $taskManager->getAllList();
+if (isset($_POST['all'])){
+    $tasklist = $taskManager->getAllList();
+}
 ?>
 
 <script type="text/javascript">
