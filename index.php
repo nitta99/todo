@@ -122,7 +122,7 @@ function updateOnflg(id){
                 <table>
                     <tr>
                         <td>
-                            <input class="text" type="text" id="name" name="name" value="">
+                            <input type="text" id="name" name="name" value="">
                         </td>
                         <td>
                             <input type="date" id="deadline" name="deadline" value="">
