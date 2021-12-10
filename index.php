@@ -36,7 +36,7 @@ function regist(){
     <?php if($_POST['name']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         result ="<?php var_export($task->registTask()); ?>";
-        var_dump(result);
+        // var_dump(result);
         if(result){
             alert('登録完了いたしました');
         }
