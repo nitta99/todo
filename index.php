@@ -71,9 +71,9 @@ function updateOnflg(id){
     <body>
         <form action="index.php" method="post" name='todo'>
             <input type="hidden" name="taskId" value="" >
-            <div>
+            <div class="contact">
                 <h1>ToDoリスト</h1>
-                <table class="listTable">
+                <table class="contact">
                     <tr>
                         <td class="font-change">タイトル</td>
                         <td class="font-change">期限</td>
