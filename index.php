@@ -118,6 +118,8 @@ function updateOnflg(id){
                             <input class="allButton" type="submit" name="all" value="全て">
                         </td>
                     </tr>
+                </table>
+                <table>
                     <tr>
                         <td class="font-change">タイトル</td>
                         <td class="font-change">期限</td>
