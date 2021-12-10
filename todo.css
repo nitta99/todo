@@ -91,9 +91,12 @@
 .titlearea{
     text-align: center;
 }
-.listarea{
-    width:500px;
+table.listarea{
     margin: 0 auto;/*中央寄せ*/
+    margin-top: 10px;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    line-height: 1.5;
 }
 .hr-border {
 	border-style: double;

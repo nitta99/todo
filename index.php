@@ -74,8 +74,8 @@ function updateOnflg(id){
                 <h1 class="titlearea">ToDoリスト</h1>
                 <table class="listarea">
                     <tr>
-                        <td class="font-change">タイトル</td>
-                        <td class="font-change">期限</td>
+                        <th class="font-change">タイトル</th>
+                        <th class="font-change">期限</th>
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
