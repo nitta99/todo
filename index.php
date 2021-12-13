@@ -1,6 +1,6 @@
 <?php
 require "task.php";
-echo $sql;
+
 require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
