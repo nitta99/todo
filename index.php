@@ -69,11 +69,7 @@ function updateOnflg(id){
     }
 }
 
-$('button').clickEdit(function() {
 
-    location.href = './taskEdit.php';
-
-})
 
 </script>
 
