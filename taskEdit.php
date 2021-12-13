@@ -13,12 +13,12 @@
                 <table class="textarea">
                     <tr>
                         <td>タイトル</td>
-                        <td>期限</td>
-                    </tr>
-                    <tr>
                         <td>
                             <input class="text" type="text" id="name" name="name" value="">
                         </td>
+                    </tr>
+                    <tr>
+                        <td>期限</td>
                         <td>
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
