@@ -32,23 +32,20 @@ function editOnflg(id){
     </head>
     <body>
         <form action="taskEdit.php" method="post" name='todo'>
-            <input type="hidden" name="taskId" value="" >
             <div class="contact">
                 <h1 class="titlearea">タスク編集</h1>
                 <table class="textarea">
                     <tr>
                         <td>タイトル</td>
                         <td>
-                            <input class="text" type="text" id="name" name="name" value="">
+                            <input class="text" type="text" id="name" name="name" value="<?php $_POST['name'] ?>">
                         </td>
-                        <td class="font-change"><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                     <tr>
                         <td>期限</td>
                         <td>
-                            <input type="date" id="deadline" name="deadline" value="">
+                            <input type="date" id="deadline" name="deadline" value="<?php $_POST['deadline'] ?>">
                         </td>
-                        <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                     <tr>
                         <td>
