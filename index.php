@@ -69,6 +69,17 @@ function updateOnflg(id){
     }
 }
 
+function editOnflg(id){
+    check = window.confirm('このタスクを編集します');
+    if (check){
+        document.todo.taskId.value = id;
+        document.todo.submit();
+        return true;
+    }else{
+        return false;
+    }
+}
+
 </script>
 
 <!doctype html>
@@ -110,17 +121,29 @@ function updateOnflg(id){
                                 <td>
                                     <input class="expiredButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了">
                                 </td>
+                                <td>
+                                    <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="編集">
+                                </td>
                             <?php elseif($task->expiredTask() && $task->completeTask()): ?>
                                 <td class="font_red"><?php echo $task->getName(); ?></td>
                                 <td class="font_red"><?php echo $task->getDeadline(); ?></td>
+                                <td>
+                                    <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="編集">
+                                </td>
                             <?php elseif($task->completeTask()): ?>
                                 <td class="font_gray"><?php echo $task->getName(); ?></td>
                                 <td class="font_gray"><?php echo $task->getDeadline(); ?></td>
+                                <td>
+                                    <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="編集">
+                                </td>
                             <?php else: ?>
                                 <td class="font_black"><?php echo $task->getName(); ?></td>
                                 <td class="font_black"><?php echo $task->getDeadline(); ?></td>
                                 <td>
                                     <input class="inCompleteButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了">
+                                </td>
+                                <td>
+                                    <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="編集">
                                 </td>
                             <?php endif; ?>
                         </tr>
