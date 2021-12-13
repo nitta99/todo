@@ -6,18 +6,22 @@ $taskManager = new TaskMgtClass();
 //未完了タスクを取得
 if (isset($_POST['inComplete'])){
     $tasklist = $taskManager->getIncompleteList();
+    $selectTask = "未完了タスク一覧";
 }
 //完了タスクを取得
 if (isset($_POST['complete'])){
     $tasklist = $taskManager->getCompleteList();
+    $selectTask = "完了タスク一覧";
 }
 //期限切れタスクを取得
 if (isset($_POST['expired'])){
     $tasklist = $taskManager->getExpiredList();
+    $selectTask = "未完了期限切れタスク一覧";
 }
 //全てのタスクを取得
 if (isset($_POST['all'])){
     $tasklist = $taskManager->getAllList();
+    $selectTask = "全タスク一覧";
 }
 ?>
 
@@ -73,6 +77,20 @@ function updateOnflg(id){
             <div class="contact">
                 <h1 class="titlearea">ToDoリスト</h1>
                 <table class="listarea">
+                    <tr>
+                        <?php if(isset($_POST['inComplete'])): ?>
+                            <td><font color="black"><?php echo $selectTask; ?></font></td>
+                        <?php endif; ?>
+                        <?php if(isset($_POST['complete'])): ?>
+                            <td><font color="gray"><?php echo $selectTask; ?></font></td>
+                        <?php endif; ?>
+                        <?php if(isset($_POST['expired'])): ?>
+                            <td><font color="#ff7f50"><?php echo $selectTask; ?></font></td>
+                        <?php endif; ?>
+                        <?php if(isset($_POST['all'])): ?>
+                            <td><font color="skyblue"><?php echo $selectTask; ?></font></td>
+                        <?php endif; ?>
+                    </tr>
                     <tr>
                         <th class="font-change">タイトル</th>
                         <th class="font-change">期限</th>
