@@ -50,7 +50,7 @@ function editOnflg(id){
                     </tr>
                     <tr>
                         <td>
-                            <input type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="更新">
+                            <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="更新">
                         </td>
                         <td>
                             <input type="button" onclick="location.href='./index.php'" value="戻る">
