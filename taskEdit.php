@@ -12,7 +12,7 @@ function edit(){
 window.onload = edit;
 
 function editOnflg(id){
-    check = window.confirm('このタスクを編集します');
+    check = window.confirm('このタスクを更新します');
     if (check){
         document.todo.taskId.value = id;
         document.todo.submit();
@@ -50,7 +50,7 @@ function editOnflg(id){
                     </tr>
                     <tr>
                         <td>
-                            <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="編集">
+                            <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="更新">
                         </td>
                         <td>
                             <input type="button" onclick="location.href='./index.php'" value="戻る">
