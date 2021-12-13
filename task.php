@@ -84,7 +84,20 @@ class TaskClass{
     public function updateTask($id){
         require "connect.php";
         try{
-            $sql = sprintf("UPDATE public.todo SET fix_flg=true WHERE id = $id;");
+            $sql = "UPDATE public.todo SET fix_flg=true WHERE id = $id;";
+            $pdo->exec($sql);
+            return true;
+        }catch(PDOException $e){
+            echo "DB登録で例外が発生" . $e->getMessage();
+            return false;
+        }
+    }
+
+    //タスクを編集更新するメソッド
+    public function editTask($id){
+        require "connect.php";
+        try{
+            $sql = sprintf("UPDATE public.todo SET name='%s', deadline='%s' WHERE id = $id;");
             $pdo->exec($sql);
             return true;
         }catch(PDOException $e){
