@@ -16,7 +16,7 @@ if (isset($_POST['complete'])){
 //期限切れタスクを取得
 if (isset($_POST['expired'])){
     $tasklist = $taskManager->getExpiredList();
-    $selectTask = "未完了期限切れタスク一覧";
+    $selectTask = "期限切れタスク一覧";
 }
 //全てのタスクを取得
 if (isset($_POST['all'])){
