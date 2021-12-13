@@ -37,8 +37,14 @@ function nameCheck(){
 }
 
 function regist(){
-    <?php if($_POST['name'] || $_POST['name'] && $_POST['deadline']=null): ?>
+    <?php if($_POST['name']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
+        result ="<?php var_export($task->registTask()); ?>";
+        if(result){
+            alert('登録完了いたしました');
+        }
+    <?php elseif($_POST['name'] && $_POST['deadline']=null): ?>
+        <?php $task = new TaskClass($_POST['name'],null,false); ?>
         result ="<?php var_export($task->registTask()); ?>";
         if(result){
             alert('登録完了いたしました');
