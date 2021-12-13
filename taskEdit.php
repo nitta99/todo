@@ -28,7 +28,7 @@
                             <input class="editButton" type="submit" value="編集">
                         </td>
                         <td>
-                            <input type="button" onclick="location:href='index.php'" value="戻る">
+                            <input type="button" onclick="location.href='./index.php'" value="戻る">
                         </td>
                     </tr>
                 </table>
