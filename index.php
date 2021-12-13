@@ -43,9 +43,10 @@ function regist(){
         if(result){
             alert('登録完了いたしました');
         }
-    <?php elseif($_POST['name'] && $_POST['deadline']=null): ?>
+    <?php endif; ?>
+    <?php if($_POST['name'] && $_POST['deadline']=null): ?>
         <?php $task = new TaskClass($_POST['name'],null,false); ?>
-        result ="<?php var_export($task->registTask()); ?>";
+        result ="<?php var_export($task->titleRegistTask()); ?>";
         if(result){
             alert('登録完了いたしました');
         }

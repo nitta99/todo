@@ -67,6 +67,19 @@ class TaskClass{
         }
     }
 
+    //タスクを登録するメソッド(期日未登録)
+    public function titleRegistTask(){
+        require "connect.php";
+        try{
+            $sql = sprintf("INSERT INTO public.todo (name, deadline, fix_flg) VALUES ('%s', null, %s);", $this->name, var_export($this->fix_flg, true));
+            $pdo->exec($sql);
+            return true;
+        }catch(PDOException $e){
+            echo "DB登録で例外が発生" . $e->getMessage();
+            return false;
+        }
+    }
+
     //タスクを更新するメソッド
     public function updateTask($id){
         require "connect.php";
