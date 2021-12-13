@@ -53,7 +53,7 @@ function editOnflg(id){
                             <input class="editButton" type="button" onclick="editOnflg()" value="更新">
                         </td>
                         <td>
-                            <input type="button" onclick="location.href='./index.php'" value="戻る">
+                            <input class="backButton" type="button" onclick="location.href='./index.php'" value="戻る">
                         </td>
                     </tr>
                 </table>
