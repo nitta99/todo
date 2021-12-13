@@ -79,16 +79,16 @@ function updateOnflg(id){
                 <table class="listarea">
                     <tr>
                         <?php if(isset($_POST['inComplete'])): ?>
-                            <td><font color="black"><?php echo $selectTask; ?></font></td>
+                            <td class="font-change"><font color="black"><?php echo $selectTask; ?></font></td>
                         <?php endif; ?>
                         <?php if(isset($_POST['complete'])): ?>
-                            <td><font color="gray"><?php echo $selectTask; ?></font></td>
+                            <td class="font-change"><font color="gray"><?php echo $selectTask; ?></font></td>
                         <?php endif; ?>
                         <?php if(isset($_POST['expired'])): ?>
-                            <td><font color="#ff7f50"><?php echo $selectTask; ?></font></td>
+                            <td class="font-change"><font color="#ff7f50"><?php echo $selectTask; ?></font></td>
                         <?php endif; ?>
                         <?php if(isset($_POST['all'])): ?>
-                            <td><font color="skyblue"><?php echo $selectTask; ?></font></td>
+                            <td class="font-change"><font color="skyblue"><?php echo $selectTask; ?></font></td>
                         <?php endif; ?>
                     </tr>
                     <tr>
