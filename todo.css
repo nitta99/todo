@@ -85,8 +85,8 @@
 }
 .editButton {
     display: flex;
-    align-items: center;
-    justify-content: left;
+    float: left;
+    justify-content: center;
     line-height: 1;
     text-decoration: none;
     color: #ffffff;
