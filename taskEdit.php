@@ -1,3 +1,28 @@
+<?php
+require "task.php";
+?>
+
+<script type="text/javascript">
+function edit(){
+    <?php if($_POST['taskId']): ?>
+        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
+        <?php var_export($task->editTask($_POST['taskId'])); ?>
+    <?php endif; ?>
+}
+window.onload = edit;
+
+function editOnflg(id){
+    check = window.confirm('このタスクを編集します');
+    if (check){
+        document.todo.taskId.value = id;
+        document.todo.submit();
+        return true;
+    }else{
+        return false;
+    }
+}
+</script>
+
 <!doctype html>
 <html>
     <head>

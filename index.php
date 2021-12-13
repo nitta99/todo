@@ -69,17 +69,6 @@ function updateOnflg(id){
     }
 }
 
-function editOnflg(id){
-    check = window.confirm('このタスクを編集します');
-    if (check){
-        document.todo.taskId.value = id;
-        document.todo.submit();
-        return true;
-    }else{
-        return false;
-    }
-}
-
 </script>
 
 <!doctype html>
