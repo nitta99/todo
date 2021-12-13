@@ -41,12 +41,14 @@ function editOnflg(id){
                         <td>
                             <input class="text" type="text" id="name" name="name" value="">
                         </td>
+                        <td class="font-change"><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                     <tr>
                         <td>期限</td>
                         <td>
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
+                        <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                     <tr>
                         <td>
