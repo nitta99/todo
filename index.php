@@ -70,7 +70,7 @@ function updateOnflg(id){
 }
 
 function editOnflg(id, name, deadline){
-    check = window.confirm('このタスクを完了します');
+    check = window.confirm('このタスクを編集します');
     if (check){
         document.todo.action = 'taskEdit.php';
         document.todo.taskId.value = id;
