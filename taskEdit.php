@@ -48,11 +48,9 @@ function editOnflg(id){
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                     </tr>
-                </table>
-                <table class="buttonarea">
                     <tr>
                         <td>
-                            <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="編集">
+                            <input class="editButton" type="submit" value="編集">
                         </td>
                         <td>
                             <input type="button" onclick="location.href='./index.php'" value="戻る">
