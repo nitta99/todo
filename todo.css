@@ -84,7 +84,8 @@
     background-color: #3cb371;
 }
 .editButton {
-    float: left;
+    display: flex;
+    align-items: center;
     justify-content: center;
     line-height: 1;
     text-decoration: none;
