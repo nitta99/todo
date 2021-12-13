@@ -48,8 +48,6 @@ function editOnflg(id){
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                     </tr>
-                </table>
-                <table>
                     <tr>
                         <td>
                             <input class="editButton" type="button" onclick="editOnflg()" value="更新">
