@@ -94,10 +94,10 @@ class TaskClass{
     }
 
     //タスクを編集更新するメソッド
-    public function editTask($id){
+    public function editTask(){
         require "connect.php";
         try{
-            $sql = sprintf("UPDATE public.todo SET name='%s', deadline='%s' WHERE id = $id;", $this->name, $this->deadline);
+            $sql = sprintf("UPDATE public.todo SET name='%s', deadline='%s' WHERE id = %d;", $this->name, $this->deadline, $this->id);
             $pdo->exec($sql);
             return true;
         }catch(PDOException $e){
