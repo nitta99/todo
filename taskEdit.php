@@ -11,10 +11,10 @@ function edit(){
 }
 window.onload = edit;
 
-function editOnflg(){
+function editOnflg(id){
     check = window.confirm('このタスクを更新します');
     if (check){
-        document.todo.taskId = taskId;
+        document.todo.taskId = id;
         document.todo.submit();
         return true;
     }else{
