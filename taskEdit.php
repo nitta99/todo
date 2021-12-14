@@ -11,12 +11,11 @@ function edit(){
 }
 window.onload = edit;
 
-function editOnflg(id,name,deadline){
+function editOnflg(name,deadline){
     check = window.confirm('このタスクを更新します');
     if (check){
-        document.todo.taskId = id;
-        document.todo.taskName.value = name;
-        document.todo.taskDeadline.value = deadline;
+        document.todo.taskName.value = $_POST['taskName'];
+        document.todo.taskDeadline.value = $_POST['taskDeadline'];
         document.todo.submit();
         return true;
     }else{
@@ -54,7 +53,7 @@ function editOnflg(id,name,deadline){
                     </tr>
                     <tr>
                         <td>
-                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['taskId'] ?>, '<?php echo $_POST['taskName'] ?>', '<?php echo $_POST['taskDeadline'] ?>')" value="更新">
+                            <input class="editButton" type="button" onclick="editOnflg('<?php echo $_POST['taskName'] ?>', '<?php echo $_POST['taskDeadline'] ?>')" value="更新">
                         </td>
                         <td>
                             <input class="backButton" type="button" onclick="location.href='./index.php'" value="戻る">
