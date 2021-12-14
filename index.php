@@ -37,9 +37,9 @@ function nameCheck(){
 }
 
 function regist(){
+    <?php if($_POST['name']): ?>
     check = window.confirm('この内容で登録します');
     if (check){
-        <?php if($_POST['name']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         result ="<?php var_export($task->registTask()); ?>";
         if(result){
