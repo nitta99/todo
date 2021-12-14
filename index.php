@@ -52,7 +52,6 @@ function regist(){
         }
     <?php endif; ?>
 }
-window.onload = regist;
 
 function updateOnflg(id){
     check = window.confirm('このタスクを完了します');
@@ -184,7 +183,7 @@ function editOnflg(id, name, deadline){
                             <input type="date" id="deadline" name="deadline" value="">
                         </td>
                         <td>
-                            <input class="registButton" type="submit" value="登録" onclick="nameCheck()">
+                            <input class="registButton" type="submit" value="登録" onclick="nameCheck();regist()">
                         </td>
                     </tr>
                 </table>
