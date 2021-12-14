@@ -4,7 +4,7 @@ require "task.php";
 
 <script type="text/javascript">
 
-function editOnflg(name, deadline){
+function editOnflg(id){
     check = window.confirm('このタスクを更新します');
     if (check){
         document.todo.taskName.value = name;
