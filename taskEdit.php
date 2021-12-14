@@ -14,7 +14,7 @@ window.onload = edit;
 function editOnflg(){
     check = window.confirm('このタスクを更新します');
     if (check){
-        document.todo.taskId = $_POST['taskId'];
+        document.todo.taskId = id;
         document.todo.submit();
         return true;
     }else{
@@ -50,7 +50,7 @@ function editOnflg(){
                     </tr>
                     <tr>
                         <td>
-                            <input class="editButton" type="button" onclick="editOnflg(<? $_POST['taskId'] ?>)" value="更新">
+                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['taskId'] ?>)" value="更新">
                         </td>
                         <td>
                             <input class="backButton" type="button" onclick="location.href='./index.php'" value="戻る">
