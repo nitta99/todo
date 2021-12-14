@@ -40,10 +40,12 @@ function regist(){
     <?php if($_POST['name']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         result ="<?php var_export($task->registTask()); ?>";
-    <?php endif; ?>
-    if(result){
-        alert('登録完了いたしました');
-    }
+        if(result){
+            alert('登録完了いたしました');
+            return true;
+        }
+            return false;
+        <?php endif; ?>
 }
 
 function updateOnflg(id){
