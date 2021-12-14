@@ -14,7 +14,7 @@ window.onload = edit;
 function editOnflg(){
     check = window.confirm('このタスクを更新します');
     if (check){
-        document.todo.taskId = id;
+        document.todo.taskId = taskId;
         document.todo.submit();
         return true;
     }else{
