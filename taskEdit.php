@@ -6,10 +6,8 @@ require "task.php";
 function edit(){
     <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['taskName'],$_POST['taskDeadline'],false,$_POST['taskId']); ?>
-        result = <?php var_export($task->editTask($_POST['taskId'])); ?>
-        if(result){
-            alert("更新完了いたしました");
-        }
+        <?php var_export($task->editTask($_POST['taskId'])); ?>
+        alert("更新完了いたしました");
     <?php endif; ?>
 }
 window.onload = edit;
