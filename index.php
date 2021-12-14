@@ -61,7 +61,7 @@ function updateOnflg(id){
     }
 }
 
-window.editOnflg = function editOnflg(id, name, deadline){
+function editOnflg(id, name, deadline){
     check = window.confirm('このタスクを編集します');
     if (check){
         document.todo.action = 'taskEdit.php';
