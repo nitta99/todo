@@ -33,6 +33,9 @@ function editOnflg(name, deadline){
     </head>
     <body>
         <form action="taskEdit.php" method="post" name='todo'>
+        <input type="hidden" name="taskId" value="" >
+            <input type="hidden" name="taskName" value="" >
+            <input type="hidden" name="taskDeadline" value="" >
             <div class="contact">
                 <h1 class="titlearea">タスク編集</h1>
                 <table class="textarea">
