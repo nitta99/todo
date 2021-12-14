@@ -4,15 +4,15 @@ require "task.php";
 
 <script type="text/javascript">
 
-function editOnflg(id){
+function editOnflg(name, deadline){
     check = window.confirm('このタスクを更新します');
     if (check){
         document.todo.taskName.value = name;
         document.todo.taskDeadline.value = deadline;
         document.todo.submit();
-        <?php if($_POST['taskName']): ?>
+        <?php if($_POST['taskId']): ?>
             <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-            <?php var_export($task->editTask()); ?>
+            <?php var_export($task->editTask($_POST['taskId'])); ?>
         <?php endif; ?>
         return true;
     }else{
