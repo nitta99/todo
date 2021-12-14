@@ -119,7 +119,7 @@ function editOnflg(id, name, deadline){
                                     <input class="expiredButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了">
                                 </td>
                                 <td>
-                                    <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>, <? echo $task->getDeadline() ?>)" value="編集">
+                                    <input class="editButton" type="button" onclick="editOnflg(<? $task->getId() ?>, <? $task->getName() ?>, <? $task->getDeadline() ?>)" value="編集">
                                 </td>
                             <?php elseif($task->expiredTask() && $task->completeTask()): ?>
                                 <td class="font_red"><?php echo $task->getName(); ?></td>
