@@ -42,13 +42,13 @@ function editOnflg(name, deadline){
                     <tr>
                         <td>タイトル</td>
                         <td>
-                            <input class="text" type="text" id="name" name="name" value="<?php echo htmlspecialchars(@$_POST['taskName'], ENT_QUOTES, 'UTF-8'); ?>">
+                            <input class="text" type="text" id="name" name="name" value="<?php echo $_POST['taskName'] ?>">
                         </td>
                     </tr>
                     <tr>
                         <td>期限</td>
                         <td>
-                            <input type="date" id="deadline" name="deadline" value="<?php echo htmlspecialchars(@$_POST['taskDeadline'], ENT_QUOTES, 'UTF-8'); ?>">
+                            <input type="date" id="deadline" name="deadline" value="<?php echo $_POST['taskDeadline'] ?>">
                         </td>
                     </tr>
                     <tr>
