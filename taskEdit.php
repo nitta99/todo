@@ -14,6 +14,7 @@ window.onload = edit;
 function editOnflg(id){
         document.todo.taskId = id;
         document.todo.submit();
+        alert("更新しました");
 }
 </script>
 
