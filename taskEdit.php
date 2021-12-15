@@ -49,7 +49,7 @@ function editOnflg(id){
                     </tr>
                     <tr>
                         <td>
-                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['taskId'] ?>)" value="更新">
+                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['taskId'] ?>);edit()" value="更新">
                         </td>
                         <td>
                             <input class="backButton" type="button" onclick="location.href='./index.php'" value="戻る">
