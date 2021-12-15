@@ -40,10 +40,10 @@ function regist(){
     <?php if(isset($_POST['name'])): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         result ="<?php var_export($task->registTask()); ?>";
+        <?php endif; ?>
         if(result){
             alert("登録完了いたしました");
         }
-        <?php endif; ?>
 }
 
 function updateOnflg(id){
@@ -53,9 +53,11 @@ function updateOnflg(id){
         document.todo.submit();
         <?php if($_POST['taskId']): ?>
             <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-            <?php var_export($task->updateTask($_POST['taskId'])); ?>
-            alert("タスクが完了しました");
+            result = <?php var_export($task->updateTask($_POST['taskId'])); ?>
         <?php endif; ?>
+        if(result){
+            alert("タスクが完了しました");
+        }
         return true;
     }else{
         return false;
