@@ -7,10 +7,10 @@ function edit(){
     <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
         result = "<?php var_export($task->editTask($_POST['taskId'])); ?>";
-        if(result){
-            alert("タスクを更新しました");
-        }
     <?php endif; ?>
+    if(result){
+        alert("タスクを更新しました");
+    }
 }
 window.onload = edit();
 
