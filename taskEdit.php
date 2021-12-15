@@ -13,6 +13,7 @@ function edit(){
             }
         <?php endif; ?>
 }
+window.onload = edit();
 
 function editOnflg(id){
         document.todo.taskId = id;
