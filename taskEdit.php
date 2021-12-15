@@ -12,7 +12,6 @@ function editOnflg(id){
             <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
             <?php var_export($task->editTask($_POST['taskId'])); ?>
         <?php endif; ?>
-        alert("更新しました");
 }
 </script>
 
