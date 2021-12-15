@@ -3,11 +3,6 @@ require "task.php";
 ?>
 
 <script type="text/javascript">
-function editOnflg(id){
-        document.todo.taskId.value = id;
-        document.todo.submit();
-}
-
 function edit(){
     <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
@@ -18,6 +13,11 @@ function edit(){
     <?php endif; ?>
 }
 window.onload = edit();
+
+function editOnflg(id){
+    document.todo.taskId.value = id;
+    document.todo.submit();
+}
 </script>
 
 <!doctype html>
