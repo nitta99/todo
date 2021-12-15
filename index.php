@@ -40,24 +40,25 @@ function regist(){
     <?php if(isset($_POST['name'])): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
         result ="<?php var_export($task->registTask()); ?>";
-        <?php endif; ?>
         if(result){
             alert("登録完了しました");
         }
+    <?php endif; ?>
+    <?php if($_POST['taskId']): ?>
+        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
+        result = <?php var_export($task->updateTask($_POST['taskId'])); ?>
+        if (result){
+            alert("タスクが完了しました");
+        }
+    <?php endif; ?>
 }
+window.onload = regist();
 
 function updateOnflg(id){
     check = window.confirm('このタスクを完了します');
     if (check){
         document.todo.taskId.value = id;
         document.todo.submit();
-        <?php if($_POST['taskId']): ?>
-            <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-            $result = <?php var_export($task->updateTask($_POST['taskId'])); ?>
-        <?php endif; ?>
-        <?php if ($result): ?>
-                alert("タスクが完了しました");
-            <?php endif; ?>
     }
 }
 
