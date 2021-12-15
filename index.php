@@ -53,15 +53,15 @@ function updateOnflg(id){
         document.todo.submit();
         <?php if($_POST['taskId']): ?>
             <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-            <?php $result = var_export($task->updateTask($_POST['taskId'])); ?>
+            result = <?php var_export($task->updateTask($_POST['taskId'])); ?>
+            if (result){
+                alert("タスクが完了しました");
+            }
         <?php endif; ?>
         return true;
     }else{
         return false;
     }
-    <?php if ($result): ?>
-        alert("タスクが完了しました");
-    <?php endif; ?>
 }
 
 function editOnflg(id, name, deadline){
