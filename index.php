@@ -42,7 +42,7 @@ function regist(){
         result ="<?php var_export($task->registTask()); ?>";
         <?php endif; ?>
         if(result){
-            alert("登録完了いたしました");
+            alert("登録完了しました");
         }
 }
 
