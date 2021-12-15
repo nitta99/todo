@@ -7,12 +7,12 @@ function edit(){
     <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
         <?php var_export($task->editTask($_POST['taskId'])); ?>
+        alert("タスクを更新しました");
     <?php endif; ?>
 }
 window.onload = edit();
 
 function editOnflg(id){
-    alert("タスクを更新しました");
     document.todo.taskId.value = id;
     document.todo.submit();
 }
