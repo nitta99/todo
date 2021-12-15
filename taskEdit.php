@@ -7,10 +7,10 @@ function edit(){
     <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
         result = <?php var_export($task->editTask($_POST['taskId'])); ?>
+        if(result){
+            alert("更新完了いたしました");
+        }
     <?php endif; ?>
-    if(result){
-        alert("更新完了いたしました");
-    }
 }
 
 function editOnflg(id){
