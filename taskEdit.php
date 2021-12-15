@@ -3,16 +3,19 @@ require "task.php";
 ?>
 
 <script type="text/javascript">
+function edit(){
+    <?php if($_POST['taskId']): ?>
+        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
+        <?php var_export($task->editTask($_POST['taskId'])); ?>
+    <?php endif; ?>
+}
+window.onload = edit;
 
 function editOnflg(id){
     check = window.confirm('このタスクを更新します');
     if (check){
         document.todo.taskId = id;
         document.todo.submit();
-        <?php if($_POST['taskId']): ?>
-            <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
-            <?php var_export($task->editTask($_POST['taskId'])); ?>
-        <?php endif; ?>
         return true;
     }else{
         return false;
