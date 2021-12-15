@@ -9,11 +9,9 @@ function editOnflg(id){
         document.todo.taskId = id;
         document.todo.submit();
         <?php if($_POST['taskId']): ?>
-        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
-        result = <?php var_export($task->editTask($_POST['taskId'])); ?>
-        if(result){
+            <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
+            <?php var_export($task->editTask($_POST['taskId'])); ?>
             alert("更新しました")
-        }
         <?php endif; ?>
 }
 </script>
