@@ -1,6 +1,5 @@
 <?php
 require "task.php";
-echo $sql;
 ?>
 
 <script type="text/javascript">
@@ -34,6 +33,7 @@ function editOnflg(id){
                 <table class="textarea">
                     <tr>
                         <td>タイトル</td>
+                        <?php echo $sql; ?>
                         <td>
                             <input class="text" type="text" id="name" name="name" value="<?php echo $_POST['taskName'] ?>">
                         </td>
