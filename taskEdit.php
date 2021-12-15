@@ -6,12 +6,10 @@ require "task.php";
 function edit(){
     <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
-        result = <?php var_export($task->editTask($_POST['taskId'])); ?>
-        if(result){
-            alert("更新完了いたしました");
-        }
+        <?php var_export($task->editTask($_POST['taskId'])); ?>
     <?php endif; ?>
 }
+window.onload = edit;
 
 function editOnflg(id){
         document.todo.taskId = id;
@@ -46,7 +44,7 @@ function editOnflg(id){
                     </tr>
                     <tr>
                         <td>
-                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['taskId'] ?>); edit()" value="更新">
+                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['taskId'] ?>)" value="更新">
                         </td>
                         <td>
                             <input class="backButton" type="button" onclick="location.href='./index.php'" value="戻る">
