@@ -10,10 +10,10 @@ function editOnflg(id){
         <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
         result = <?php var_export($task->editTask($_POST['taskId'])); ?>
+        <?php endif; ?>
         if(result){
             alert("更新完了いたしました");
         }
-        <?php endif; ?>
 }
 </script>
 

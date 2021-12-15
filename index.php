@@ -55,12 +55,12 @@ function updateOnflg(id){
             <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
             result = <?php var_export($task->updateTask($_POST['taskId'])); ?>
         <?php endif; ?>
+        if(result){
+            alert("タスクが完了しました");
+        }
         return true;
     }else{
         return false;
-    }
-    if(result){
-        alert("タスクが完了しました");
     }
 }
 
