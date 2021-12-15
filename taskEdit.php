@@ -1,5 +1,6 @@
 <?php
 require "task.php";
+echo $sql;
 ?>
 
 <script type="text/javascript">
