@@ -8,13 +8,13 @@ function edit(){
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
         <?php var_export($task->editTask($_POST['taskId'])); ?>
     <?php endif; ?>
+    alert("更新しました");
 }
 window.onload = edit;
 
 function editOnflg(id){
         document.todo.taskId = id;
         document.todo.submit();
-        alert("更新しました");
 }
 </script>
 
