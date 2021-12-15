@@ -6,15 +6,13 @@ require "task.php";
 function edit(){
     <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
-        result = "<?php var_export($task->editTask($_POST['taskId'])); ?>";
+        <?php var_export($task->editTask($_POST['taskId'])); ?>
     <?php endif; ?>
-    if(result){
-        alert("タスクを更新しました");
-    }
 }
 window.onload = edit();
 
 function editOnflg(id){
+    alert("タスクを更新しました");
     document.todo.taskId.value = id;
     document.todo.submit();
 }
