@@ -70,9 +70,6 @@ function editOnflg(id, name, deadline){
         document.todo.taskName.value = name;
         document.todo.taskDeadline.value = deadline;
         document.todo.submit();
-        return true;
-    }else{
-        return false;
     }
 }
 
