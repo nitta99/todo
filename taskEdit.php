@@ -4,10 +4,10 @@ require "task.php";
 
 <script type="text/javascript">
 
-function editOnflg(taskId){
+function editOnflg(id){
     check = window.confirm('このタスクを更新します');
     if (check){
-        document.todo.taskId = taskId;
+        document.todo.taskId = id;
         document.todo.submit();
         <?php if($_POST['taskId']): ?>
             <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
@@ -47,7 +47,7 @@ function editOnflg(taskId){
                     </tr>
                     <tr>
                         <td>
-                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['taskId'] ?>)" value="更新">
+                            <input class="editButton" type="button" onclick="editOnflg(<? echo $task->getId() ?>)" value="更新">
                         </td>
                         <td>
                             <input class="backButton" type="button" onclick="location.href='./index.php'" value="戻る">
