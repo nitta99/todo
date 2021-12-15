@@ -53,7 +53,7 @@ function updateOnflg(id){
         document.todo.submit();
         <?php if($_POST['taskId']): ?>
             <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false); ?>
-            result = <?php var_export($task->updateTask($_POST['taskId'])); ?>
+            <?php var_export($task->updateTask($_POST['taskId'])); ?>
         <?php endif; ?>
         return true;
     }else{
