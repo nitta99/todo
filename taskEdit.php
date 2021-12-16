@@ -15,7 +15,7 @@ function edit(){
 window.onload = edit();
 
 function editOnflg(id){
-    document.todo.taskId.value = id;
+    document.todo.editTaskId.value = id;
     document.todo.submit();
 }
 </script>
