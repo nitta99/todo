@@ -87,7 +87,6 @@ function editOnflg(id, name, deadline){
             <input type="hidden" name="taskId" value="" >
             <input type="hidden" name="taskName" value="" >
             <input type="hidden" name="taskDeadline" value="" >
-            <input type="hidden" name="editTaskId" value="" >
             <div class="contact">
                 <h1 class="titlearea">ToDoリスト</h1>
                 <table class="listarea">
