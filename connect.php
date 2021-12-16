@@ -15,7 +15,7 @@
     return $pdo;
 
     //必要なページ数を求める
-    $count = $pdo->prepare('SELECT COUNT(*) AS count FROM public.todo');
+    $count = $pdo->prepare("SELECT COUNT(*) AS count FROM public.todo;");
     $count->execute();
     $total_count = $count->fetch(PDO::FETCH_ASSOC);
     $pages = ceil($total_count['count'] / max_view);
