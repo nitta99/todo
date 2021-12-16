@@ -6,6 +6,7 @@ $taskManager = new TaskMgtClass();
 //未完了タスクを取得
 if (isset($_POST['inComplete'])){
     $tasklist = $taskManager->getIncompleteList();
+    echo $data;
     $selectTask = "未完了タスク一覧";
 }
 //完了タスクを取得
