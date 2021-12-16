@@ -5,8 +5,8 @@ require "task.php";
 <script type="text/javascript">
 function edit(){
     <?php if($_POST['editTaskId']): ?>
-        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['editTaskId']); ?>
-        result = "<?php var_export($task->editTask($_POST['editTaskId'])); ?>";
+        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
+        result = "<?php var_export($task->editTask($_POST['taskId'])); ?>";
         if(result){
             alert("タスクを更新しました");
         }
@@ -48,7 +48,7 @@ function editOnflg(id){
                     </tr>
                     <tr>
                         <td>
-                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['editTaskId'] ?>)" value="更新">
+                            <input class="editButton" type="button" onclick="editOnflg(<? echo $_POST['taskId'] ?>)" value="更新">
                         </td>
                         <td>
                             <input class="backButton" type="button" onclick="location.href='./index.php'" value="戻る">
