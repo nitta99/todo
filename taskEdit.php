@@ -5,7 +5,7 @@ require "task.php";
 <script type="text/javascript">
 function edit(){
     <?php if($_POST['editTaskId']): ?>
-        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['editTaskId']); ?>
+        <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
         result = "<?php var_export($task->editTask($_POST['taskId'])); ?>";
         if(result){
             alert("タスクを更新しました");
