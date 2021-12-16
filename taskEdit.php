@@ -4,7 +4,7 @@ require "task.php";
 
 <script type="text/javascript">
 function edit(){
-    <?php if($_POST['editTaskId']): ?>
+    <?php if($_POST['taskId']): ?>
         <?php $task = new TaskClass($_POST['name'],$_POST['deadline'],false,$_POST['taskId']); ?>
         result = "<?php var_export($task->editTask($_POST['taskId'])); ?>";
         if(result){
@@ -14,8 +14,8 @@ function edit(){
 }
 window.onload = edit();
 
-function editOnflg(taskId){
-    document.todo.editTaskId.value = taskId;
+function editOnflg(id){
+    document.todo.taskId.value = id;
     document.todo.submit();
 }
 </script>
@@ -29,7 +29,7 @@ function editOnflg(taskId){
     </head>
     <body>
         <form action="taskEdit.php" method="post" name='todo'>
-            <input type="hidden" name="editTaskId" value="" >
+            <input type="hidden" name="taskId" value="" >
             <div class="contact">
                 <h1 class="titlearea">タスク編集</h1>
                 <table class="textarea">
