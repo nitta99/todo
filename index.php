@@ -142,15 +142,6 @@ function editOnflg(id, name, deadline){
                                 </td>
                             <?php endif; ?>
                         </tr>
-                        <tr>
-                            <?php for($n = 1;$n <= $pages;$n++): ?>
-                                <?php if($n == $now): ?>
-                                    <?php echo "<span style='padding: 5px;'>$now</span>"; ?>
-                                <?php else: ?>
-                                    <?php echo "<a href='./index.php?page_id=$n' style='padding: 5px;'>$n</a>" ?>
-                                <?php endif; ?>
-                            <?php endfor; ?>
-                        </tr>
                     <?php endforeach; ?>
                     <tr>
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
