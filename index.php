@@ -148,11 +148,15 @@ function editOnflg(id, name, deadline){
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                     <tr>
-                        <?php if ($p > 1): ?>
-                            <td href='/index.php?p='.$prev>前のページ＜</td>
+                        <?php if($now > 1): ?>
+                            <td href='/index.php?page_id='.($now - 1)>前のページ＜</td>
+                        <?php else: ?>
+                            <td>前のページ</td>
                         <?php endif; ?>
-                        <?php if(($next - 1) * $lim < $dtcnt): ?>
-                            <td href='/index.php?p='.$next>次のページ＜</td>
+                        <?php if($now > $pages): ?>
+                            <td href='/index.php?page_id='.($now + 1)>次のページ＜</td>
+                        <?php else: ?>
+                            <td>次のページ</td>
                         <?php endif; ?>
                     </tr>
                 </table>
