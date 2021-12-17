@@ -6,7 +6,7 @@ class TaskMgtClass{
     //未完了タスク一覧を取得するメソッド
     public function getIncompleteList(){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT :start, :max;";
+        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT :max OFFSET :start;";
         $result = $pdo->prepare($sql);
 
         if($now == 1){
