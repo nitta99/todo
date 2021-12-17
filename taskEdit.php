@@ -16,6 +16,7 @@ window.onload = edit();
 
 function editOnflg(id){
     document.todo.editTaskId.value = id;
+    document.todo.taskId.value = id;
     document.todo.submit();
 }
 </script>
@@ -29,6 +30,7 @@ function editOnflg(id){
     </head>
     <body>
         <form action="taskEdit.php" method="post" name='todo'>
+            <input type="hidden" name="taskId" value="" >
             <input type="hidden" name="editTaskId" value="" >
             <div class="contact">
                 <h1 class="titlearea">タスク編集</h1>
