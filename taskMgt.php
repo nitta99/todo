@@ -6,14 +6,14 @@ class TaskMgtClass{
     //未完了タスク一覧を取得するメソッド
     public function getIncompleteList(){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT 10 OFFSET :start;";
+        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT 10 OFFSET 0;";
         $result = $pdo->prepare($sql);
 
         if($now == 1){
             //1ページ目の処理
-            $result->bindValue(":start",$now -1,PDO::PARAM_INT);
+            $result->bindValue(0,$now -1,PDO::PARAM_INT);
         }else{
-            $result->bindValue(":start",($now -1) * max_view,PDO::PARAM_INT);
+            $result->bindValue(0,($now -1) * max_view,PDO::PARAM_INT);
         }
         $result->execute();
         $taskData = $result->fetchAll(PDO::FETCH_ASSOC);
