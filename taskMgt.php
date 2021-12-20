@@ -12,8 +12,10 @@ class TaskMgtClass{
         if($now == 1){
             //1ページ目の処理
             $result->bindValue(":start",$now -1,PDO::PARAM_INT);
+            $result->bindValue(10,max_view,PDO::PARAM_INT);
         }else{
             $result->bindValue(":start",($now -1) * max_view,PDO::PARAM_INT);
+            $result->bindValue(10,max_view,PDO::PARAM_INT);
         }
         $result->execute();
         $taskData = $result->fetchAll(PDO::FETCH_ASSOC);
