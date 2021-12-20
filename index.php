@@ -1,10 +1,11 @@
 <?php
 require "connect.php";
+define('max_page',5);
 //必要なページ数取得
 $count = $pdo->prepare("SELECT COUNT(*) AS count FROM public.todo;");
 $count->execute();
 $total_count = $count->fetch(PDO::FETCH_ASSOC);
-$pages = ceil($total_count['count'] / 5);
+$pages = (int)ceil($total_count['count'] / max_page);
 
 //現在のページ番号を取得
 if(!isset($_GET['page_id'])){
@@ -168,7 +169,7 @@ function editOnflg(id, name, deadline){
                         <?php else: ?>
                             <td><?php echo "前のページ" ?></td>
                         <?php endif; ?>
-                        <?php if($now > $pages): ?>
+                        <?php if($now < $pages): ?>
                             <td><a href="index.php?page_id=<?php $now + 1 ?>">＞次のページ</a></td>
                         <?php else: ?>
                             <td><?php echo "次のページ" ?></td>
