@@ -6,7 +6,7 @@ require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
 if (isset($_POST['inComplete'])){
-    $tasklist = $taskManager->getIncompleteList();
+    $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
     $selectTask = "未完了タスク一覧";
 }
 //完了タスクを取得
@@ -151,12 +151,12 @@ function editOnflg(id, name, deadline){
                     <tr>
                         <td><?php echo '全件数'.$total_count.'件'; ?></td>
                         <?php if($now > 1): ?>
-                            <td href='/index.php?page_id='.($now - 1)>前のページ＜</td>
+                            <td><a href='/index.php?page_id='.><?php ($now - 1) ?></a>前のページ＜</td>
                         <?php else: ?>
                             <td>前のページ</td>
                         <?php endif; ?>
                         <?php if($now > $pages): ?>
-                            <td href='/index.php?page_id='.($now + 1)>次のページ＜</td>
+                            <td><a href='/index.php?page_id='.><?php ($now + 1) ?></a>＞次のページ</td>
                         <?php else: ?>
                             <td>次のページ</td>
                         <?php endif; ?>
