@@ -155,6 +155,9 @@ function editOnflg(id, name, deadline){
                         <?php else: ?>
                             <td>前のページ</td>
                         <?php endif; ?>
+                        <?php for($x = 1;$x <= $pages;$x++): ?>
+                            <a href="?page=<?php echo $x ?>"><?php echo $x; ?></a>
+                        <?php endfor; ?>
                         <?php if($now > $pages): ?>
                             <td><a href='/index.php?page_id='.<?php $now + 1 ?>></a>＞次のページ</td>
                         <?php else: ?>
