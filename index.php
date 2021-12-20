@@ -173,6 +173,15 @@ function editOnflg(id, name, deadline){
                         <?php else: ?>
                             <td>次のページ</td>
                         <?php endif; ?>
+                        <?php
+                            for ( $n = 1; $n <= $pages; $n ++){
+                                if ( $n == $now ){
+                                    echo "<span style='padding: 5px;'>$now</span>";
+                                }else{
+                                    echo "<a href='./index.php?page_id=$n' style='padding: 5px;'>$n</a>";
+                                }
+                            }
+                        ?>
                     </tr>
                 </table>
                 <hr class="hr-border">
