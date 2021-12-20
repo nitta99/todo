@@ -3,7 +3,7 @@ require "connect.php";
 //必要なページ数取得
 $count = $pdo->prepare("SELECT COUNT(*) AS count FROM public.todo;");
 $count->execute();
-$total_count = count($count[0]);
+$total_count = $count->fetch(PDO::FETCH_ASSOC);
 $pages = ceil($total_count['count'] / 5);
 
 //現在のページ番号を取得
