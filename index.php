@@ -1,11 +1,10 @@
 <?php
 require "connect.php";
-define('max_view',5);
 //必要なページ数取得
 $count = $pdo->prepare("SELECT COUNT(*) AS count FROM public.todo;");
 $count->execute();
 $total_count = $count->fetch(PDO::FETCH_ASSOC);
-$pages = ceil($total_count['count'] / max_view);
+$pages = ceil($total_count['count'] / 5);
 
 //現在のページ番号を取得
 if(!isset($_GET['page_id'])){
@@ -157,6 +156,15 @@ function editOnflg(id, name, deadline){
                                 </td>
                             <?php endif; ?>
                         </tr>
+                        <?php
+                            for ( $n = 1; $n <= $pages; $n ++){
+                                if ( $n == $now ){
+                                    echo "<span style='padding: 5px;'>$now</span>";
+                                }else{
+                                    echo "<a href='./index.php?page_id=$n' style='padding: 5px;'>$n</a>";
+                                }
+                            }
+                        ?>
                     <?php endforeach; ?>
                     <tr>
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
@@ -174,15 +182,6 @@ function editOnflg(id, name, deadline){
                         <?php else: ?>
                             <td>次のページ</td>
                         <?php endif; ?>
-                        <?php
-                            for ( $n = 1; $n <= $pages; $n ++){
-                                if ( $n == $now ){
-                                    echo "<span style='padding: 5px;'>$now</span>";
-                                }else{
-                                    echo "<a href='./index.php?page_id=$n' style='padding: 5px;'>$n</a>";
-                                }
-                            }
-                        ?>
                     </tr>
                 </table>
                 <hr class="hr-border">
