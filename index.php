@@ -148,6 +148,7 @@ function editOnflg(id, name, deadline){
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                     <tr>
+                        <td><?php echo '全件数'.$total_count.'件'; ?></td>
                         <?php if($now > 1): ?>
                             <td href='/index.php?page_id='.($now - 1)>前のページ＜</td>
                         <?php else: ?>
