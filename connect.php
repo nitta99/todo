@@ -1,6 +1,5 @@
 <?php
-    //一ページに表示するタスクの数をmax_viewに定数として定義
-    define('max_view', 5);
+
 
     $url = parse_url(getenv('DATABASE_URL'));
     $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
@@ -18,7 +17,7 @@
     $count = $pdo->prepare("SELECT COUNT(*) AS count FROM public.todo;");
     $count->execute();
     $total_count = $count->fetch(PDO::FETCH_ASSOC);
-    $pages = ceil($total_count['count'] / max_view);
+    $pages = ceil($total_count['count'] / 5);
 
     //現在のページ番号を取得
     if(!isset($_GET['page_id'])){
