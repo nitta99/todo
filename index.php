@@ -162,17 +162,19 @@ function editOnflg(id, name, deadline){
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                     <tr>
-                        <td><?php echo '全件数'.$total_count.'件'; ?></td>
+                        <td><?php echo '全件数'.$total_count['count'].'件'; ?></td>
                         <?php if($now > 1): ?>
-                            <td><a href="index.php?page_id=<?php echo ($now - 1); ?>"></a>前のページ＜</td>
+                            <td><a href="index.php?page_id=<?php $now - 1 ?>">前のページ＜</a></td>
                         <?php else: ?>
                             <td><?php echo "前のページ" ?></td>
                         <?php endif; ?>
                         <?php if($now > $pages): ?>
-                            <td><a href="index.php?page_id=<?php echo ($now + 1); ?>"></a>＞次のページ</td>
+                            <td><a href="index.php?page_id=<?php $now + 1 ?>">＞次のページ</a></td>
                         <?php else: ?>
                             <td><?php echo "次のページ" ?></td>
                         <?php endif; ?>
+                        <?php var_dump($now); ?>
+                        <?php var_dump($pages); ?>
                     </tr>
                 </table>
                 <hr class="hr-border">
