@@ -166,12 +166,12 @@ function editOnflg(id, name, deadline){
                         <?php if($now > 1): ?>
                             <td><a href="index.php?page_id=<?php echo ($now - 1); ?>"></a>前のページ＜</td>
                         <?php else: ?>
-                            <td>前のページ</td>
+                            <td><?php echo "前のページ" ?></td>
                         <?php endif; ?>
                         <?php if($now > $pages): ?>
                             <td><a href="index.php?page_id=<?php echo ($now + 1); ?>"></a>＞次のページ</td>
                         <?php else: ?>
-                            <td>次のページ</td>
+                            <td><?php echo "次のページ" ?></td>
                         <?php endif; ?>
                     </tr>
                 </table>
