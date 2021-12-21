@@ -126,8 +126,8 @@ function editOnflg(id, name, deadline){
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
                             <?php if ($task->expiredTask() && !$task->completeTask()): ?>
-                                <td class="font_red"><a href="<?php $task['taskId'] ?>">{<?php $task['taskName'] ?>}</a></td>
-                                <td class="font_red"><a href="<?php $task['taskId'] ?>">{<?php $task['taskDeadline'] ?>}</a></td>
+                                <td class="font_red"><a href="<?php $task[0] ?>">{<?php $task['taskName'] ?>}</a></td>
+                                <td class="font_red"><a href="<?php $task[0] ?>">{<?php $task['taskDeadline'] ?>}</a></td>
                                 <td>
                                     <input class="expiredButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了">
                                 </td>
