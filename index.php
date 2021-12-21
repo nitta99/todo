@@ -170,6 +170,7 @@ function editOnflg(id, name, deadline){
                         <?php else: ?>
                             <td><?php echo "前のページ＜" ?></td>
                         <?php endif; ?>
+                        <td>
                         <?php
                             //ページネーションを表示
                             for ( $n = 1; $n <= $pages; $n++){
@@ -180,6 +181,7 @@ function editOnflg(id, name, deadline){
                                 }
                             }
                         ?>
+                        </td>
                         <?php if($now < $pages): ?>
                             <td><a href="index.php?page_id=<?php echo $now + 1 ?>">＞次のページ</a></td>
                         <?php else: ?>
