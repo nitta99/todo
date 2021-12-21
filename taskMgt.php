@@ -4,7 +4,7 @@ class TaskMgtClass{
     public $tasklist;
 
     //未完了タスク一覧を取得するメソッド
-    public function getIncompleteList($page_id = 1){
+    public function getIncompleteList($page_id){
         require "connect.php";
         $limit = 5;
         $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT $limit OFFSET %d;",$limit * $page_id);
