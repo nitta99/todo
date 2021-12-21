@@ -162,6 +162,7 @@ function editOnflg(id, name, deadline){
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
+                    <?php if(isset($_POST['inComplete']) || isset($_POST['complete']) || isset($_POST['expired']) || isset($_POST['all'])): ?>
                     <tr>
                         <td><?php echo '全件数'.$total_count['count'].'件'; ?></td>
                         <?php if($now > 1): ?>
@@ -177,6 +178,7 @@ function editOnflg(id, name, deadline){
                         <?php var_dump($now); ?>
                         <?php var_dump($pages); ?>
                     </tr>
+                    <?php endif; ?>
                 </table>
                 <hr class="hr-border">
                 <table class="buttonarea">
