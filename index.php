@@ -1,18 +1,7 @@
 <?php
 require "connect.php";
-define('max_page',5);
-//必要なページ数取得
-$count = $pdo->prepare("SELECT COUNT(*) AS count FROM public.todo;");
-$count->execute();
-$total_count = $count->fetch(PDO::FETCH_ASSOC);
-$pages = (int)ceil($total_count['count'] / max_page);
 
-//現在のページ番号を取得
-if(!isset($_GET['page_id'])){
-    $now = 1;
-}else{
-    $now = $_GET['page_id'];
-}
+
 
 require "task.php";
 
@@ -126,8 +115,8 @@ function editOnflg(id, name, deadline){
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
                             <?php if ($task->expiredTask() && !$task->completeTask()): ?>
-                                <td class="font_red"><a href="<?php echo $task[1]; ?>"></a></td>
-                                <td class="font_red"><a href="<?php echo $task[2]; ?>"></a></td>
+                                <td class="font_red"><a href="<?php $task['taskId'] ?>">{<?php $task['taskName'] ?>}</a></td>
+                                <td class="font_red"><a href="<?php $task['taskId'] ?>">{<?php $task['taskDeadline'] ?>}</a></td>
                                 <td>
                                     <input class="expiredButton" type="button" onclick="updateOnflg(<? echo $task->getId() ?>)" value="完了">
                                 </td>
