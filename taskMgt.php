@@ -5,10 +5,8 @@ class TaskMgtClass{
     //タスク一覧
     public $tasklist;
 
-    public $page_id;
-
     //未完了タスク一覧を取得するメソッド
-    public function getIncompleteList($page_id){
+    public function getIncompleteList(){
         require "connect.php";
         $limit = 5;
         $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT $limit OFFSET $limit * ($page_id - 1);";
