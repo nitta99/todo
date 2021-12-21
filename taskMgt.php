@@ -3,6 +3,8 @@ class TaskMgtClass{
     //タスク一覧
     public $tasklist;
 
+    public $page_id;
+
     //未完了タスク一覧を取得するメソッド
     public function getIncompleteList($page_id){
         require "connect.php";

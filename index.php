@@ -20,7 +20,7 @@ require "taskMgt.php";
 $taskManager = new TaskMgtClass();
 //未完了タスクを取得
 if (isset($_POST['inComplete'])){
-    $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
+    $tasklist = $taskManager->getIncompleteList($_POST['page_id']);
     $selectTask = "未完了タスク一覧";
 }
 //完了タスクを取得
