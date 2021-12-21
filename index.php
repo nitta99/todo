@@ -170,6 +170,13 @@ function editOnflg(id, name, deadline){
                         <?php else: ?>
                             <td><?php echo "前のページ＜" ?></td>
                         <?php endif; ?>
+                        <?php for($i = 1;$i <= $pages;$i++): ?>
+                            <?php if($i == $now): ?>
+                                <td><?php echo $now; ?></td>
+                            <?php else: ?>
+                            <td><a href="index.php?page_id=<?php $i ?>"><?php echo $i; ?></a></td>
+                            <?php endif; ?>
+                        <?php endfor; ?>
                         <?php if($now < $pages): ?>
                             <td><a href="index.php?page_id=<?php $now + 1 ?>">＞次のページ</a></td>
                         <?php else: ?>
