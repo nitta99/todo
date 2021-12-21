@@ -1,6 +1,4 @@
 <?php
-require "index.php";
-
 class TaskMgtClass{
     //タスク一覧
     public $tasklist;
