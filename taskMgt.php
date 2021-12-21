@@ -9,7 +9,7 @@ class TaskMgtClass{
     public function getIncompleteList(){
         require "connect.php";
         $limit = 5;
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT $limit OFFSET $limit * ($page_id - 1);";
+        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT $limit OFFSET 0;";
         $result = $pdo->query($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
