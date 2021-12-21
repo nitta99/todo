@@ -8,7 +8,7 @@
     $pages = (int)ceil($total_count['count'] / max_page);
 
     //現在のページ番号を取得
-    if(isset($_GET['page_id'])){
+    if(!isset($_GET['page_id'])){
         $now = 1;
     }else{
         $now = $_GET['page_id'];
