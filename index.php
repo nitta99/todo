@@ -177,6 +177,7 @@ function editOnflg(id, name, deadline){
                         <?php endif; ?>
                         <?php var_dump($now); ?>
                         <?php var_dump($pages); ?>
+                        <?php echo $_POST['page_id']; ?>
                     </tr>
                     <?php endif; ?>
                 </table>
