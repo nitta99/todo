@@ -4,10 +4,10 @@ class TaskMgtClass{
     public $tasklist;
 
     //未完了タスク一覧を取得するメソッド
-    public function getIncompleteList($page_id){
+    public function getIncompleteList($page_id = 1){
         require "connect.php";
         $limit = 5;
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT $limit OFFSET $limit * ($page_id - 1);";
+        $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT $limit OFFSET %d;",$limit * ($page_id - 1));
         echo $sql;
         $result = $pdo->query($sql);
         foreach($result as $data){
