@@ -166,7 +166,7 @@ function editOnflg(id, name, deadline){
                     <tr>
                         <td><?php echo '全件数'.$total_count['count'].'件'; ?></td>
                         <?php if($now > 1): ?>
-                            <td><a href="index.php?page_id=<?php $now - 1 ?>">前のページ＜</a></td>
+                            <td><a href="index.php?page_id=<?php $now ?>">前のページ＜</a></td>
                         <?php else: ?>
                             <td><?php echo "前のページ" ?></td>
                         <?php endif; ?>
