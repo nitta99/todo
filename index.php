@@ -1,7 +1,18 @@
 <?php
 require "connect.php";
+define('max_page',5);
+//必要なページ数取得
+$count = $pdo->prepare("SELECT COUNT(*) AS count FROM public.todo;");
+$count->execute();
+$total_count = $count->fetch(PDO::FETCH_ASSOC);
+$pages = (int)ceil($total_count['count'] / max_page);
 
-
+//現在のページ番号を取得
+if(!isset($_GET['page_id'])){
+    $now = 1;
+}else{
+    $now = $_GET['page_id'];
+}
 
 require "task.php";
 
