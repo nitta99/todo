@@ -28,7 +28,7 @@
             $to_record = $now * 5;
         }
 
-        if(isset($_POST['id'])){
+        if(isset($_GET['page_id'])){
             $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
         }else{
             $tasklist = $taskManager->getIncompleteList();
