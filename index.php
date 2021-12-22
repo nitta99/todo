@@ -29,9 +29,9 @@
         }
 
         if(isset($_GET['id'])){
-            $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
-        }else{
             $tasklist = $taskManager->getIncompleteList();
+        }else{
+            $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
         }
         $selectTask = "未完了タスク一覧";
     }
