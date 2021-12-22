@@ -38,7 +38,7 @@
     //完了タスクを取得
     if (isset($_POST['complete'])){
         //必要なページ数取得
-        $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = false;";
+        $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = true;";
 
         //現在のページ番号を取得
         if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
