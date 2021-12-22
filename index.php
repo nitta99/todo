@@ -28,7 +28,11 @@
             $to_record = $now * 5;
         }
 
-        $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
+        if(isset($_GET['id'])){
+            $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
+        }else{
+            $tasklist = $taskManager->getIncompleteList();
+        }
         $selectTask = "未完了タスク一覧";
     }
     //完了タスクを取得
