@@ -202,7 +202,7 @@ function editOnflg(id, name, deadline){
                     <tr>
                         <td><?php echo $total_count['count'].'件中'.$from_record.'-'.$to_record.'件目を表示'; ?></td>
                         <?php if($now > 1): ?>
-                            <td><a href="?page_id=<?php echo ($now - 1); ?>">前のページ＜</a></td>
+                            <td><a href="index.php?page_id=<?php echo ($now - 1); ?>">前のページ＜</a></td>
                         <?php else: ?>
                             <td><?php echo "前のページ＜"; ?></td>
                         <?php endif; ?>
@@ -219,7 +219,7 @@ function editOnflg(id, name, deadline){
                         ?>
                         </td>
                         <?php if($now < $pages): ?>
-                            <td><a href="?page_id=<?php echo ($now + 1); ?>">＞次のページ</a></td>
+                            <td><a href="index.php?page_id=<?php echo ($now + 1); ?>">＞次のページ</a></td>
                         <?php else: ?>
                             <td><?php echo "＞次のページ"; ?></td>
                         <?php endif; ?>
