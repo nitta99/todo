@@ -221,7 +221,7 @@ function editOnflg(id, name, deadline){
                         <?php if($now < $pages): ?>
                             <td><a href="index.php?page_id=<?php echo ($now + 1); ?>">＞次のページ</a></td>
                         <?php else: ?>
-                            <td><?php echo "次のページ＜"; ?></td>
+                            <td><?php echo "＞次のページ"; ?></td>
                         <?php endif; ?>
                         <?php var_dump($now); ?>
                         <?php var_dump($pages); ?>
