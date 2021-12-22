@@ -1,17 +1,24 @@
 <?php
     require "connect.php";
-    define('max_page',5);
     //必要なページ数取得
-    $count = $pdo->prepare("SELECT COUNT(*) AS count FROM public.todo;");
-    $count->execute();
-    $total_count = $count->fetch(PDO::FETCH_ASSOC);
-    $pages = (int)ceil($total_count['count'] / max_page);
+    $count_sql = "SELECT COUNT(*) AS count FROM public.todo;";
 
     //現在のページ番号を取得
-    if(!isset($_GET['page_id'])){
-        $now = 1;
-    }else{
+    if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
         $now = $_GET['page_id'];
+    }else{
+        $now = 1;
+    }
+
+    $count = $pdo->query($count_sql);
+    $total_count = $count->fetch(PDO::FETCH_ASSOC);
+    $pages = (int)ceil($total_count['count'] / 5);
+
+    $from_record = ($now - 1) * 5 + 1;
+    if($now == $pages && $total_count['count'] % 5 !== 0){
+        $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
+    }else{
+        $to_record = $now * 5;
     }
 
     require "task.php";
@@ -164,11 +171,11 @@ function editOnflg(id, name, deadline){
                     </tr>
                     <?php if(isset($_POST['inComplete']) || isset($_POST['complete']) || isset($_POST['expired']) || isset($_POST['all'])): ?>
                     <tr>
-                        <td><?php echo '全件数'.$total_count['count'].'件'; ?></td>
+                        <td><?php echo $total_count['count'].'件中'.$from_record.'-'.$to_record.'件目を表示'; ?></td>
                         <?php if($now > 1): ?>
-                            <td><a href="index.php?page_id=<?php echo $now - 1 ?>">前のページ＜</a></td>
+                            <td><a href="index.php?page_id=<?php echo ($now - 1); ?>">前のページ＜</a></td>
                         <?php else: ?>
-                            <td><?php echo "前のページ＜" ?></td>
+                            <td><?php echo "前のページ＜"; ?></td>
                         <?php endif; ?>
                         <td>
                         <?php
@@ -183,9 +190,9 @@ function editOnflg(id, name, deadline){
                         ?>
                         </td>
                         <?php if($now < $pages): ?>
-                            <td><a href="index.php?page_id=<?php echo $now + 1 ?>">＞次のページ</a></td>
+                            <td><a href="index.php?page_id=<?php echo ($now + 1); ?>">＞次のページ</a></td>
                         <?php else: ?>
-                            <td><?php echo "次のページ＜" ?></td>
+                            <td><?php echo "次のページ＜"; ?></td>
                         <?php endif; ?>
                         <?php var_dump($now); ?>
                         <?php var_dump($pages); ?>
