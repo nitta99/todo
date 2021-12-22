@@ -1,6 +1,22 @@
 <?php
     require "connect.php";
+    //現在のページ番号を取得
+    if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
+        $now = $_GET['page_id'];
+    }else{
+        $now = 1;
+    }
 
+    $count = $pdo->query($count_sql);
+    $total_count = $count->fetch(PDO::FETCH_ASSOC);
+    $pages = (int)ceil($total_count['count'] / 5);
+
+    $from_record = ($now - 1) * 5 + 1;
+    if($now == $pages && $total_count['count'] % 5 !== 0){
+        $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
+    }else{
+        $to_record = $now * 5;
+    }
     require "task.php";
 
     require "taskMgt.php";
@@ -9,24 +25,6 @@
     if (isset($_POST['inComplete'])){
         //必要なページ数取得
         $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = false;";
-
-        //現在のページ番号を取得
-        if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
-            $now = $_GET['page_id'];
-        }else{
-            $now = 1;
-        }
-
-        $count = $pdo->query($count_sql);
-        $total_count = $count->fetch(PDO::FETCH_ASSOC);
-        $pages = (int)ceil($total_count['count'] / 5);
-
-        $from_record = ($now - 1) * 5 + 1;
-        if($now == $pages && $total_count['count'] % 5 !== 0){
-            $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
-        }else{
-            $to_record = $now * 5;
-        }
 
         $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
         $selectTask = "未完了タスク一覧";
