@@ -6,8 +6,7 @@ class TaskMgtClass{
     //未完了タスク一覧を取得するメソッド
     public function getIncompleteList($page_id = 1){
         require "connect.php";
-        $limit = 5;
-        $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT $limit OFFSET %d;",$limit * ($page_id - 1));
+        $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT 5 OFFSET %d;",5 * ($page_id - 1));
         echo $sql;
         $result = $pdo->query($sql);
         foreach($result as $data){
@@ -18,9 +17,9 @@ class TaskMgtClass{
     }
 
     //完了タスク一覧を取得するメソッド
-    public function getCompleteList(){
+    public function getCompleteList($page_id = 1){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = true ORDER BY id;";
+        $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = true ORDER BY id LIMIT 5 OFFSET %d;",5 * ($page_id - 1));
         $result = $pdo->query($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
