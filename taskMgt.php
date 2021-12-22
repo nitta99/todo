@@ -8,7 +8,9 @@ class TaskMgtClass{
         require "connect.php";
         $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY id LIMIT 5 OFFSET %d;",5 * ($page_id - 1));
         echo $sql;
-        $result = $pdo->query($sql);
+        $result = $pdo->prepare($sql);
+        $result->bindParam(5,$page_id - 1,PDO::PARAM_INT);
+        $result->execute();
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
             $this->tasklist[] = $task;
