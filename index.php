@@ -28,10 +28,10 @@
             $to_record = $now * 5;
         }
 
-        if(isset($_GET['id'])){
-            $tasklist = $taskManager->getIncompleteList();
-        }else{
+        if(isset($_GET['name'])){
             $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
+        }else{
+            $tasklist = $taskManager->getIncompleteList();
         }
         $selectTask = "未完了タスク一覧";
     }
