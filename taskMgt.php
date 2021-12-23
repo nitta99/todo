@@ -70,10 +70,13 @@ class TaskMgtClass{
         $pages = (int)ceil($total_count['count'] / 5);
 
         $from_record = ($now - 1) * 5 + 1;
+        echo $from_record;
         if($now == $pages && $total_count['count'] % 5 !== 0){
             $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
+            echo $to_record;
         }else{
             $to_record = $now * 5;
+            echo $to_record;
         }
     }
 }
