@@ -75,13 +75,40 @@
         $tasklist = $taskManager->getAllList();
         $selectTask = "全タスク一覧";
     }
-    //名前昇順タスクを取得
-    if(isset($_POST['nameAsc'])){
-        $tasklist = $taskManager->getNameAsc();
+    //名前昇順タスクを取得(未完了)
+    if(isset($_POST['incompleteNameAsc'])){
+        $tasklist = $taskManager->getIncompleteNameAsc();
     }
-    //名前降順タスクを取得
-    if(isset($_POST['nameDesc'])){
-        $tasklist = $taskManager->getNameDesc();
+    //名前降順タスクを取得(未完了)
+    if(isset($_POST['incompleteNameDesc'])){
+        $tasklist = $taskManager->getIncompleteNameDesc();
+    }
+
+    //名前昇順タスクを取得(完了)
+    if(isset($_POST['completeNameAsc'])){
+        $tasklist = $taskManager->getCompleteNameAsc();
+    }
+    //名前降順タスクを取得(完了)
+    if(isset($_POST['completeNameAsc'])){
+        $tasklist = $taskManager->getCompleteNameDesc();
+    }
+
+    //名前昇順タスクを取得(期限切れ)
+    if(isset($_POST['deadlineNameAsc'])){
+        $tasklist = $taskManager->getDeadlineNameAsc();
+    }
+    //名前降順タスクを取得(期限切れ)
+    if(isset($_POST['deadlineNameAsc'])){
+        $tasklist = $taskManager->getDeadlineNameDesc();
+    }
+
+    //名前昇順タスクを取得(全て)
+    if(isset($_POST['allNameAsc'])){
+        $tasklist = $taskManager->getAllNameAsc();
+    }
+    //名前降順タスクを取得(全て)
+    if(isset($_POST['allNameAsc'])){
+        $tasklist = $taskManager->getAllNameDesc();
     }
 ?>
 
@@ -166,8 +193,22 @@ function editOnflg(id, name, deadline){
                     </tr>
                     <tr>
                         <th class="font-change">タイトル
-                            <input type="submit" name="nameAsc" value="▲">
-                            <input type="submit" name="nameDesc" value="▼">
+                        <?php if(isset($_POST['inComplete'])): ?>
+                            <input type="submit" name="incompleteNameAsc" value="▲">
+                            <input type="submit" name="incompleteNameDesc" value="▼">
+                        <?php endif; ?>
+                        <?php if(isset($_POST['complete'])): ?>
+                            <input type="submit" name="completeNameAsc" value="▲">
+                            <input type="submit" name="completeNameDesc" value="▼">
+                        <?php endif; ?>
+                        <?php if(isset($_POST['expired'])): ?>
+                            <input type="submit" name="deadlineNameAsc" value="▲">
+                            <input type="submit" name="deadlineNameAsc" value="▼">
+                        <?php endif; ?>
+                        <?php if(isset($_POST['all'])): ?>
+                            <input type="submit" name="deadlineNameAsc" value="▲">
+                            <input type="submit" name="deadlineNameAsc" value="▼">
+                        <?php endif; ?>
                         </th>
                         <th class="font-change">期限</th>
                     </tr>
