@@ -75,6 +75,14 @@
         $tasklist = $taskManager->getAllList();
         $selectTask = "全タスク一覧";
     }
+    //名前昇順タスクを取得
+    if(isset($_POST['nameAsc'])){
+        $tasklist = $taskManager->getNameAsc();
+    }
+    //名前降順タスクを取得
+    if(isset($_POST['nameDesc'])){
+        $tasklist = $taskManager->getNameDesc();
+    }
 ?>
 
 <script type="text/javascript">
@@ -158,6 +166,12 @@ function editOnflg(id, name, deadline){
                     </tr>
                     <tr>
                         <th class="font-change">タイトル</th>
+                        <td>
+                            <input type="submit" name="nameAsc" value="▲">
+                        </td>
+                        <td>
+                            <input type="submit" name="nameDesc" value="▼">
+                        </td>
                         <th class="font-change">期限</th>
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
