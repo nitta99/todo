@@ -165,11 +165,10 @@ function editOnflg(id, name, deadline){
                         <?php endif; ?>
                     </tr>
                     <tr>
-                        <th class="font-change">タイトル</th>
-                        <td>
+                        <th class="font-change">タイトル
                             <input type="submit" name="nameAsc" value="▲">
                             <input type="submit" name="nameDesc" value="▼">
-                        </td>
+                        </th>
                         <th class="font-change">期限</th>
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
