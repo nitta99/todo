@@ -53,7 +53,7 @@ class TaskMgtClass{
     }
 
     //ページ数の取得
-    public function getIncompletePage(){
+    public function getIncompletePage($now,$pages,$from_record,$to_record){
         require "connect.php";
         //必要なページ数取得
         $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = false;";
