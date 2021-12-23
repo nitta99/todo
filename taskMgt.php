@@ -55,7 +55,7 @@ class TaskMgtClass{
     //名前の昇順でタスク一覧を取得するメソッド
     public function getNameAsc(){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo ORDER BY name ASC;";
+        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY name ASC;";
         $result = $pdo->query($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
@@ -67,7 +67,7 @@ class TaskMgtClass{
     //名前の降順でタスク一覧を取得するメソッド
     public function getNameDesc(){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo ORDER BY name DESC;";
+        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY name DESC;";
         $result = $pdo->query($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);

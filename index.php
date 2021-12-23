@@ -168,8 +168,6 @@ function editOnflg(id, name, deadline){
                         <th class="font-change">タイトル</th>
                         <td>
                             <input type="submit" name="nameAsc" value="▲">
-                        </td>
-                        <td>
                             <input type="submit" name="nameDesc" value="▼">
                         </td>
                         <th class="font-change">期限</th>
