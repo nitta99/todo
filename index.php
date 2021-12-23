@@ -7,7 +7,7 @@
     $taskManager = new TaskMgtClass();
     //未完了タスクを取得
     if (isset($_POST['inComplete'])){
-        $taskManager->getIncompletePage();
+        $taskManager->getIncompletePage($now,$pages,$from_record,$to_record);
 
         if(isset($_GET['page_id'])){
             $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
