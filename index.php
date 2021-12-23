@@ -9,20 +9,6 @@
     if (isset($_POST['inComplete'])){
         $taskManager->getIncompletePage();
 
-        //現在のページ番号を取得
-        if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
-            $now = $_GET['page_id'];
-        }else{
-            $now = 1;
-        }
-
-        $from_record = ($now - 1) * 5 + 1;
-        if($now == $pages && $total_count['count'] % 5 !== 0){
-            $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
-        }else{
-            $to_record = $now * 5;
-        }
-
         if(isset($_GET['page_id'])){
             $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
         }else{
