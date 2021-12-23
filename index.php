@@ -75,6 +75,7 @@
         $tasklist = $taskManager->getAllList();
         $selectTask = "全タスク一覧";
     }
+
     //名前昇順タスクを取得(未完了)
     if(isset($_POST['incompleteNameAsc'])){
         $tasklist = $taskManager->getIncompleteNameAsc();
