@@ -4,8 +4,10 @@
     require "task.php";
 
     require "taskMgt.php";
-
+    $mode = isset($_GET['mode']);
     $taskManager = new TaskMgtClass();
+    switch($mode){
+        case "inComplete":
     //未完了タスクを取得
     if (isset($_POST['inComplete']) || isset($_GET['inComplete'])){
         //必要なページ数取得
@@ -36,6 +38,8 @@
         }
         $selectTask = "未完了タスク一覧";
     }
+    break;
+    case "complete":
     //完了タスクを取得
     if (isset($_POST['complete']) || isset($_GET['complete'])){
         //必要なページ数取得
@@ -66,16 +70,22 @@
         }
         $selectTask = "完了タスク一覧";
     }
+    break;
+    case "expired":
     //期限切れタスクを取得
     if (isset($_POST['expired']) || isset($_GET['expired'])){
         $tasklist = $taskManager->getExpiredList();
         $selectTask = "期限切れタスク一覧";
     }
+    break;
+    case "all":
     //全てのタスクを取得
     if (isset($_POST['all']) || isset($_GET['all'])){
         $tasklist = $taskManager->getAllList();
         $selectTask = "全タスク一覧";
     }
+    break;
+}
 ?>
 
 <script type="text/javascript">
@@ -204,7 +214,7 @@ function editOnflg(id, name, deadline){
                     <tr>
                         <td><?php echo $total_count['count'].'件中'.$from_record.'-'.$to_record.'件目を表示'; ?></td>
                         <?php if($now > 1): ?>
-                            <td><a href="index.php?page_id=<?php echo ($now - 1); ?>">前のページ＜</a></td>
+                            <td><a href="index.php?<?php echo sprintf("page_id=%s&mode=%s",($now - 1),$mode); ?>">前のページ＜</a></td>
                         <?php else: ?>
                             <td><?php echo "前のページ＜"; ?></td>
                         <?php endif; ?>
@@ -221,7 +231,7 @@ function editOnflg(id, name, deadline){
                         ?>
                         </td>
                         <?php if($now < $pages): ?>
-                            <td><a href="index.php?page_id=<?php echo ($now + 1); ?>">＞次のページ</a></td>
+                            <td><a href="index.php?<?php echo sprintf("page_id=%s&mode=%s",($now + 1),$mode); ?>">＞次のページ</a></td>
                         <?php else: ?>
                             <td><?php echo "＞次のページ"; ?></td>
                         <?php endif; ?>
