@@ -271,8 +271,6 @@ function editOnflg(id, name, deadline){
                         <?php else: ?>
                             <td><?php echo "＞次のページ"; ?></td>
                         <?php endif; ?>
-                        <?php var_dump($now); ?>
-                        <?php var_dump($pages); ?>
                     </tr>
                     <?php endif; ?>
                 </table>
