@@ -248,7 +248,7 @@ function editOnflg(id, name, deadline){
                     </tr>
                     <?php if($_GET['mode'] == 'inComplete' || $_GET['mode'] == 'complete' || $_GET['mode'] == 'expired' || $_GET['mode'] == 'all'): ?>
                     <tr>
-                        <td><?php echo $total_count['count'].'件中'.$from_record.'/'.$to_record.'件目を表示'; ?></td>
+                        <td><?php echo $total_count['count'].'件中 '.$from_record.'/'.$to_record.' 件目を表示'; ?></td>
                         <?php if($now > 1): ?>
                             <td><a href="index.php?<?php echo sprintf("page_id=%s&mode=%s",($now - 1),$mode); ?>">前のページ＜</a></td>
                         <?php else: ?>
