@@ -47,10 +47,52 @@
         $selectTask = "完了タスク一覧";
     //期限切れタスクを取得
     }else if ($_POST['mode'] == 'expired' || $_GET['mode'] == 'expired'){
+        //必要なページ数取得
+        $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE deadline < CURRENT_DATE;";
+
+        //現在のページ番号を取得
+        if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
+            $now = $_GET['page_id'];
+        }else{
+            $now = 1;
+        }
+
+        $count = $pdo->query($count_sql);
+        $total_count = $count->fetch(PDO::FETCH_ASSOC);
+        $pages = (int)ceil($total_count['count'] / 5);
+
+        $from_record = ($now - 1) * 5 + 1;
+        if($now == $pages && $total_count['count'] % 5 !== 0){
+            $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
+        }else{
+            $to_record = $now * 5;
+        }
+
         $tasklist = $taskManager->getExpiredList();
         $selectTask = "期限切れタスク一覧";
     //全てのタスクを取得
     }else if ($_POST['mode'] == 'all' || $_GET['mode'] == 'all'){
+        //必要なページ数取得
+        $count_sql = "SELECT COUNT(*) AS count FROM public.todo;";
+
+        //現在のページ番号を取得
+        if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
+            $now = $_GET['page_id'];
+        }else{
+            $now = 1;
+        }
+
+        $count = $pdo->query($count_sql);
+        $total_count = $count->fetch(PDO::FETCH_ASSOC);
+        $pages = (int)ceil($total_count['count'] / 5);
+
+        $from_record = ($now - 1) * 5 + 1;
+        if($now == $pages && $total_count['count'] % 5 !== 0){
+            $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
+        }else{
+            $to_record = $now * 5;
+        }
+
         $tasklist = $taskManager->getAllList();
         $selectTask = "全タスク一覧";
     }
