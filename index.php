@@ -140,16 +140,16 @@ function editOnflg(id, name, deadline){
                 <h1 class="titlearea">ToDoリスト</h1>
                 <table class="listarea">
                     <tr>
-                        <?php if(isset($_POST['inComplete'])): ?>
+                        <?php if($_POST['mode'] == 'inComplete'): ?>
                             <td class="font-change"><font color="black"><?php echo $selectTask; ?></font></td>
                         <?php endif; ?>
-                        <?php if(isset($_POST['complete'])): ?>
+                        <?php if($_POST['mode'] == 'complete'): ?>
                             <td class="font-change"><font color="gray"><?php echo $selectTask; ?></font></td>
                         <?php endif; ?>
-                        <?php if(isset($_POST['expired'])): ?>
+                        <?php if($_POST['mode'] == 'expired'): ?>
                             <td class="font-change"><font color="#ff7f50"><?php echo $selectTask; ?></font></td>
                         <?php endif; ?>
-                        <?php if(isset($_POST['all'])): ?>
+                        <?php if($_POST['mode'] == 'all'): ?>
                             <td class="font-change"><font color="skyblue"><?php echo $selectTask; ?></font></td>
                         <?php endif; ?>
                     </tr>
@@ -196,7 +196,7 @@ function editOnflg(id, name, deadline){
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                         <td class="font-change"><?php echo htmlspecialchars(@$_POST['deadline'], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
-                    <?php if(isset($_POST['inComplete']) || isset($_POST['complete']) || isset($_POST['expired']) || isset($_POST['all'])): ?>
+                    <?php if($_POST['mode'] == 'inComplete' || $_POST['mode'] == 'complete' || $_POST['mode'] == 'expired' || $_POST['mode'] == 'all'): ?>
                     <tr>
                         <td><?php echo $total_count['count'].'件中'.$from_record.'-'.$to_record.'件目を表示'; ?></td>
                         <?php if($now > 1): ?>
