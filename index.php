@@ -5,8 +5,7 @@
 
     require "taskMgt.php";
     $taskManager = new TaskMgtClass();
-    $mode = isset($_GET['mode']) ? $_GET['mode'] : "incomplete";
-    if($mode){
+    if(isset($_GET['mode'])){
         //未完了タスクを取得
         if (isset($_POST['inComplete']) || isset($_GET['inComplete'])){
             //必要なページ数取得
