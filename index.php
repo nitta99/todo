@@ -7,77 +7,77 @@
     $mode = isset($_GET['mode']);
     $taskManager = new TaskMgtClass();
     if($mode){
-    //未完了タスクを取得
-    if (isset($_POST['inComplete']) || isset($_GET['inComplete'])){
-        //必要なページ数取得
-        $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = false;";
+        //未完了タスクを取得
+        if (isset($_POST['inComplete']) || isset($_GET['inComplete'])){
+            //必要なページ数取得
+            $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = false;";
 
-        //現在のページ番号を取得
-        if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
-            $now = $_GET['page_id'];
-        }else{
-            $now = 1;
+            //現在のページ番号を取得
+            if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
+                $now = $_GET['page_id'];
+            }else{
+                $now = 1;
+            }
+
+            $count = $pdo->query($count_sql);
+            $total_count = $count->fetch(PDO::FETCH_ASSOC);
+            $pages = (int)ceil($total_count['count'] / 5);
+
+            $from_record = ($now - 1) * 5 + 1;
+            if($now == $pages && $total_count['count'] % 5 !== 0){
+                $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
+            }else{
+                $to_record = $now * 5;
+            }
+
+            if(isset($_GET['page_id'])){
+                $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
+            }else{
+                $tasklist = $taskManager->getIncompleteList();
+            }
+            $selectTask = "未完了タスク一覧";
         }
+        //完了タスクを取得
+        else if (isset($_POST['complete']) || isset($_GET['complete'])){
+            //必要なページ数取得
+            $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = true;";
 
-        $count = $pdo->query($count_sql);
-        $total_count = $count->fetch(PDO::FETCH_ASSOC);
-        $pages = (int)ceil($total_count['count'] / 5);
+            //現在のページ番号を取得
+            if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
+                $now = $_GET['page_id'];
+            }else{
+                $now = 1;
+            }
 
-        $from_record = ($now - 1) * 5 + 1;
-        if($now == $pages && $total_count['count'] % 5 !== 0){
-            $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
-        }else{
-            $to_record = $now * 5;
+            $count = $pdo->query($count_sql);
+            $total_count = $count->fetch(PDO::FETCH_ASSOC);
+            $pages = (int)ceil($total_count['count'] / 5);
+
+            $from_record = ($now - 1) * 5 + 1;
+            if($now == $pages && $total_count['count'] % 5 !== 0){
+                $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
+            }else{
+                $to_record = $now * 5;
+            }
+
+            if(isset($_GET['page_id'])){
+                $tasklist = $taskManager->getCompleteList($_GET['page_id']);
+            }else{
+                $tasklist = $taskManager->getCompleteList();
+            }
+            $selectTask = "完了タスク一覧";
         }
-
-        if(isset($_GET['page_id'])){
-            $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
-        }else{
-            $tasklist = $taskManager->getIncompleteList();
+        //期限切れタスクを取得
+        else if (isset($_POST['expired']) || isset($_GET['expired'])){
+            $tasklist = $taskManager->getExpiredList();
+            $selectTask = "期限切れタスク一覧";
         }
-        $selectTask = "未完了タスク一覧";
+        //全てのタスクを取得
+        else if (isset($_POST['all']) || isset($_GET['all'])){
+            $tasklist = $taskManager->getAllList();
+            $selectTask = "全タスク一覧";
+        }
     }
-    //完了タスクを取得
-    else if (isset($_POST['complete']) || isset($_GET['complete'])){
-        //必要なページ数取得
-        $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = true;";
-
-        //現在のページ番号を取得
-        if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
-            $now = $_GET['page_id'];
-        }else{
-            $now = 1;
-        }
-
-        $count = $pdo->query($count_sql);
-        $total_count = $count->fetch(PDO::FETCH_ASSOC);
-        $pages = (int)ceil($total_count['count'] / 5);
-
-        $from_record = ($now - 1) * 5 + 1;
-        if($now == $pages && $total_count['count'] % 5 !== 0){
-            $to_record = ($now - 1) * 5 + $total_count['count'] % 5;
-        }else{
-            $to_record = $now * 5;
-        }
-
-        if(isset($_GET['page_id'])){
-            $tasklist = $taskManager->getCompleteList($_GET['page_id']);
-        }else{
-            $tasklist = $taskManager->getCompleteList();
-        }
-        $selectTask = "完了タスク一覧";
-    }
-    //期限切れタスクを取得
-    else if (isset($_POST['expired']) || isset($_GET['expired'])){
-        $tasklist = $taskManager->getExpiredList();
-        $selectTask = "期限切れタスク一覧";
-    }
-    //全てのタスクを取得
-    else if (isset($_POST['all']) || isset($_GET['all'])){
-        $tasklist = $taskManager->getAllList();
-        $selectTask = "全タスク一覧";
-    }
-}
 ?>
 
 <script type="text/javascript">
