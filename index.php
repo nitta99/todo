@@ -8,8 +8,7 @@
     $mode = $_GET['mode'];
     //未完了タスクを取得
     if ($_POST['mode'] == 'inComplete' || $_GET['mode'] == 'inComplete'){
-        //必要なページ数取得
-        $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = true;";
+        $taskManager->getPages();
 
         //現在のページ番号を取得
         if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
