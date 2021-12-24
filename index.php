@@ -6,8 +6,7 @@
     require "taskMgt.php";
     $mode = isset($_GET['mode']);
     $taskManager = new TaskMgtClass();
-    switch($mode){
-        case "inComplete":
+    if($mode){
     //未完了タスクを取得
     if (isset($_POST['inComplete']) || isset($_GET['inComplete'])){
         //必要なページ数取得
@@ -38,10 +37,8 @@
         }
         $selectTask = "未完了タスク一覧";
     }
-    break;
-    case "complete":
     //完了タスクを取得
-    if (isset($_POST['complete']) || isset($_GET['complete'])){
+    else if (isset($_POST['complete']) || isset($_GET['complete'])){
         //必要なページ数取得
         $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = true;";
 
@@ -70,21 +67,16 @@
         }
         $selectTask = "完了タスク一覧";
     }
-    break;
-    case "expired":
     //期限切れタスクを取得
-    if (isset($_POST['expired']) || isset($_GET['expired'])){
+    else if (isset($_POST['expired']) || isset($_GET['expired'])){
         $tasklist = $taskManager->getExpiredList();
         $selectTask = "期限切れタスク一覧";
     }
-    break;
-    case "all":
     //全てのタスクを取得
-    if (isset($_POST['all']) || isset($_GET['all'])){
+    else if (isset($_POST['all']) || isset($_GET['all'])){
         $tasklist = $taskManager->getAllList();
         $selectTask = "全タスク一覧";
     }
-    break;
 }
 ?>
 
