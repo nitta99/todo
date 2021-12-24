@@ -4,6 +4,7 @@
     require "task.php";
 
     require "taskMgt.php";
+    $_GET['mode'];
     $taskManager = new TaskMgtClass();
     //未完了タスクを取得
     if (isset($_POST['inComplete']) || isset($_GET['inComplete'])){
