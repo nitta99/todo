@@ -86,7 +86,11 @@
             $to_record = $now * 5;
         }
 
-        $tasklist = $taskManager->getExpiredList();
+        if(isset($_GET['page_id'])){
+            $tasklist = $taskManager->getExpiredList($_GET['page_id']);
+        }else {
+            $tasklist = $taskManager->getExpiredList();
+        }
         $selectTask = "期限切れタスク一覧";
     //全てのタスクを取得
     }else if ($_POST['mode'] == 'all' || $_GET['mode'] == 'all'){
@@ -111,7 +115,11 @@
             $to_record = $now * 5;
         }
 
-        $tasklist = $taskManager->getAllList();
+        if(isset($_GET['page_id'])){
+            $tasklist = $taskManager->getAllList($_GET['page_id']);
+        }else {
+            $tasklist = $taskManager->getAllList();
+        }
         $selectTask = "全タスク一覧";
     }
 ?>

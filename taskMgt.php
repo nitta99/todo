@@ -29,9 +29,9 @@ class TaskMgtClass{
     }
 
     //期限切れタスク一覧を取得するメソッド
-    public function getExpiredList(){
+    public function getExpiredList($page_id = 1){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE deadline < CURRENT_DATE ORDER BY id;";
+        $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE deadline < CURRENT_DATE ORDER BY id LIMIT 5 OFFSET %d;",5 * ($page_id - 1));
         $result = $pdo->query($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
@@ -41,9 +41,9 @@ class TaskMgtClass{
     }
 
     //全てのタスク一覧を取得するメソッド
-    public function getAllList(){
+    public function getAllList($page_id = 1){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo ORDER BY id;";
+        $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo ORDER BY id LIMIT 5 OFFSET %d;",5 * ($page_id - 1));
         $result = $pdo->query($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
