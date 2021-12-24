@@ -35,9 +35,8 @@
                 $tasklist = $taskManager->getIncompleteList();
             }
             $selectTask = "未完了タスク一覧";
-        }
         //完了タスクを取得
-        else if (isset($_POST['complete']) || isset($_GET['complete'])){
+        }else if (isset($_POST['complete']) || isset($_GET['complete'])){
             //必要なページ数取得
             $count_sql = "SELECT COUNT(*) AS count FROM public.todo WHERE fix_flg = true;";
 
@@ -65,14 +64,12 @@
                 $tasklist = $taskManager->getCompleteList();
             }
             $selectTask = "完了タスク一覧";
-        }
         //期限切れタスクを取得
-        else if (isset($_POST['expired']) || isset($_GET['expired'])){
+        }else if (isset($_POST['expired']) || isset($_GET['expired'])){
             $tasklist = $taskManager->getExpiredList();
             $selectTask = "期限切れタスク一覧";
-        }
         //全てのタスクを取得
-        else if (isset($_POST['all']) || isset($_GET['all'])){
+        }else if (isset($_POST['all']) || isset($_GET['all'])){
             $tasklist = $taskManager->getAllList();
             $selectTask = "全タスク一覧";
         }
