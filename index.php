@@ -261,7 +261,7 @@ function editOnflg(id, name, deadline){
                                 if ( $n == $now ){
                                     echo "<span style='padding: 5px;'>$now</span>";
                                 }else{
-                                    echo "<a href='index.php?page_id=$n' style='padding: 5px;'>$n</a>";
+                                    echo "<a href='index.php?page_id=$n&mode=$mode' style='padding: 5px;'>$n</a>";
                                 }
                             }
                         ?>
