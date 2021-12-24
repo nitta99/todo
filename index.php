@@ -236,13 +236,13 @@ function editOnflg(id, name, deadline){
                             <a class="inCompleteButton" href="index.php?page_id=1&mode=inComplete">未完了</a>
                         </td>
                         <td>
-                            <input class="completeButton" type="submit" name="complete" value="完了">
+                            <a class="completeButton" href="index.php?page_id=1&mode=complete">完了</a>
                         </td>
                         <td>
-                            <input class="expiredButton" type="submit" name="expired" value="期限切れ">
+                            <a class="expiredButton" href="index.php?page_id=1&mode=expired">期限切れ</a>
                         </td>
                         <td>
-                            <input class="allButton" type="submit" name="all" value="全て">
+                            <a class="allButton" href="index.php?page_id=1&mode=all">全て</a>
                         </td>
                     </tr>
                 </table>
