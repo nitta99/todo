@@ -4,7 +4,8 @@
     require "task.php";
 
     require "taskMgt.php";
-    $mode = isset($_GET['mode']);
+    $page_id = isset($_GET['page_id']) ? $_GET['page_id'] : 1;
+$mode = isset($_GET['mode']) ? $_GET['mode'] : "incomplete";
     $taskManager = new TaskMgtClass();
     if($mode){
         //未完了タスクを取得
@@ -206,7 +207,7 @@ function editOnflg(id, name, deadline){
                     <tr>
                         <td><?php echo $total_count['count'].'件中'.$from_record.'-'.$to_record.'件目を表示'; ?></td>
                         <?php if($now > 1): ?>
-                            <td><a href="index.php?<?php echo sprintf("page_id=%s&mode=%s",($now - 1),$mode); ?>">前のページ＜</a></td>
+                            <td><a href="index.php?<?php echo sprintf("page_id=%s&mode=%s",($page_id - 1),$mode); ?>">前のページ＜</a></td>
                         <?php else: ?>
                             <td><?php echo "前のページ＜"; ?></td>
                         <?php endif; ?>
@@ -223,7 +224,7 @@ function editOnflg(id, name, deadline){
                         ?>
                         </td>
                         <?php if($now < $pages): ?>
-                            <td><a href="index.php?<?php echo sprintf("page_id=%s&mode=%s",($now + 1),$mode); ?>">＞次のページ</a></td>
+                            <td><a href="index.php?<?php echo sprintf("page_id=%s&mode=%s",($page_id + 1),$mode); ?>">＞次のページ</a></td>
                         <?php else: ?>
                             <td><?php echo "＞次のページ"; ?></td>
                         <?php endif; ?>
@@ -236,7 +237,7 @@ function editOnflg(id, name, deadline){
                 <table class="buttonarea">
                     <tr>
                         <td>
-                            <input class="inCompleteButton" type="button" onclick="location.href='index.php?page_id=1&mode=inComplete'" value="未完了">
+                            <a class="inCompleteButton" href="index.php?page_id=1&mode=inComplete">未完了</a>
                         </td>
                         <td>
                             <a class="completeButton" href="index.php?page_id=1&mode=complete">完了</a>
