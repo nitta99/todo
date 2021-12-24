@@ -233,7 +233,7 @@ function editOnflg(id, name, deadline){
                 <table class="buttonarea">
                     <tr>
                         <td>
-                            <input class="inCompleteButton" type="submit" name="inComplete" value="未完了">
+                            <a class="inCompleteButton" href="index.php?page_id=1&mode=inComplete">未完了</a>
                         </td>
                         <td>
                             <input class="completeButton" type="submit" name="complete" value="完了">
