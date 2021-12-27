@@ -6,7 +6,8 @@
     require "taskMgt.php";
     $taskManager = new TaskMgtClass();
     $mode = $_GET['mode'];
-    $order = $_GET['order'];
+    $orderAsc = $_GET['orderAsc'];
+    $orderDesc = $_GET['orderDesc'];
     //未完了タスクを取得
     if ($_POST['mode'] == 'inComplete' || $_GET['mode'] == 'inComplete'){
         //必要なページ数取得
@@ -33,6 +34,11 @@
             $tasklist = $taskManager->getIncompleteList($_GET['page_id']);
         }else{
             $tasklist = $taskManager->getIncompleteList();
+        }
+        if($_GET['orerAsc']){
+            $tasklist = $taskManager->getIncompleteNameAsc($_GET['page_id']);
+        }else if($_GET['orderDesc']){
+            $tasklist = $taskManager->getIncompleteNameDesc($_GET['page_id']);
         }
         $selectTask = "未完了タスク一覧";
     //完了タスクを取得
@@ -206,11 +212,11 @@ function editOnflg(id, name, deadline){
                     </tr>
                     <tr>
                         <th class="font-change">タイトル</th>
-                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$order); ?>">▲</a></td>
-                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$order); ?>">▼</a></td>
+                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$orderAsc); ?>">▲</a></td>
+                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$orderDesc); ?>">▼</a></td>
                         <th class="font-change">期限</th>
-                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$order); ?>">▲</a></td>
-                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$order); ?>">▼</a></td>
+                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$orderAsc); ?>">▲</a></td>
+                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$orderDesc); ?>">▼</a></td>
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
                         <tr>

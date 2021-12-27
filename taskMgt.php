@@ -52,9 +52,9 @@ class TaskMgtClass{
     }
 
     //名前の昇順でタスク一覧を取得するメソッド（未完了）
-    public function getIncompleteNameAsc(){
+    public function getIncompleteNameAsc($page_id){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY name ASC;";
+        $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY name ASC LIMIT 5 OFFSET %d;",5 * ($page_id - 1));
         $result = $pdo->query($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
@@ -64,9 +64,9 @@ class TaskMgtClass{
     }
 
     //名前の降順でタスク一覧を取得するメソッド（未完了）
-    public function getIncompleteNameDesc(){
+    public function getIncompleteNameDesc($page_id){
         require "connect.php";
-        $sql = "SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY name DESC;";
+        $sql = sprintf("SELECT id, name, deadline, fix_flg FROM public.todo WHERE fix_flg = false ORDER BY name DESC LIMIT 5 OFFSET %d;",5 * ($page_id - 1));
         $result = $pdo->query($sql);
         foreach($result as $data){
             $task = new TaskClass($data[1], $data[2], $data[3], $data[0]);
