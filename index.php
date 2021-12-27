@@ -6,6 +6,7 @@
     require "taskMgt.php";
     $taskManager = new TaskMgtClass();
     $mode = $_GET['mode'];
+    $order = $_GET['order'];
     //未完了タスクを取得
     if ($_POST['mode'] == 'inComplete' || $_GET['mode'] == 'inComplete'){
         //必要なページ数取得
@@ -205,7 +206,11 @@ function editOnflg(id, name, deadline){
                     </tr>
                     <tr>
                         <th class="font-change">タイトル</th>
+                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$order); ?>">▲</a></td>
+                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$order); ?>">▼</a></td>
                         <th class="font-change">期限</th>
+                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$order); ?>">▲</a></td>
+                        <td><a href="index.php?<?php echo sprintf("page_id=%s&order=%s",$now,$order); ?>">▼</a></td>
                     </tr>
                     <?php foreach ($tasklist as $task): ?>
                         <tr>
