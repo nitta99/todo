@@ -178,7 +178,6 @@ function editOnflg(id, name, deadline){
         document.todo.submit();
     }
 }
-
 </script>
 
 <!doctype html>
